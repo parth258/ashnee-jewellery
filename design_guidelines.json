@@ -1,0 +1,148 @@
+{
+  "theme_and_concept": {
+    "app_type": "luxury_jewellery_brand_site",
+    "theme": "light",
+    "emotional_tone": "Luxury, Trust, Warmth, Heritage, Elegance",
+    "visual_mood": "Maroon and Ivory, Indian heritage luxury, temple-jewellery warmth, high-end editorial."
+  },
+  "typography": {
+    "fonts": {
+      "heading": "'Playfair Display', serif",
+      "body": "'Outfit', sans-serif"
+    },
+    "scales": {
+      "h1": "text-5xl sm:text-6xl lg:text-7xl tracking-tighter leading-tight",
+      "h2": "text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-snug",
+      "h3": "text-2xl sm:text-3xl tracking-normal",
+      "h4": "text-xl sm:text-2xl",
+      "body": "text-base sm:text-lg leading-relaxed",
+      "small_caps": "text-xs sm:text-sm uppercase tracking-[0.2em] font-medium"
+    },
+    "rules": {
+      "heading_weight": "font-medium or font-semibold",
+      "body_weight": "font-light or font-normal",
+      "alignment": "Center alignment for hero and marquee, left alignment for editorial text and product descriptions."
+    }
+  },
+  "colors": {
+    "primary": {
+      "DEFAULT": "#963E35",
+      "foreground": "#F6EDE2",
+      "description": "Rich Maroon for branding, primary buttons, and strong accents."
+    },
+    "secondary": {
+      "DEFAULT": "#F6EDE2",
+      "foreground": "#2A1F1D",
+      "description": "Cream/Ivory base background."
+    },
+    "accent": {
+      "DEFAULT": "#D4AF37",
+      "foreground": "#2A1F1D",
+      "description": "Gold accent for diamond dividers, fine borders, or highlighting."
+    },
+    "background": "#F6EDE2",
+    "foreground": "#2A1F1D",
+    "muted": {
+      "DEFAULT": "#E8DCD0",
+      "foreground": "#5C4B49"
+    },
+    "border": "#DBCDC0",
+    "rules": {
+      "background": "The entire app should feel warm, bathed in Ivory (#F6EDE2). Do not use stark white (#FFFFFF) unless inside a specific isolated product card.",
+      "text": "Never use pure black. Use #2A1F1D (Warm Charcoal) for body text to maintain the luxury warmth."
+    }
+  },
+  "visual_enhancers": {
+    "borders": "Fine hairline rules. Use 1px solid #DBCDC0 or #963E35/20. No thick borders.",
+    "dividers": "Use a delicate SVG diamond motif (<svg viewBox=\"0 0 24 24\"><path d=\"M12 2L22 12L12 22L2 12L12 2Z\"/></svg>) horizontally centered, often with hairline rules on either side.",
+    "shadows": "Very subtle, elegant shadows. shadow-[0_10px_40px_-10px_rgba(150,62,53,0.08)]",
+    "image_frames": "Images should have elegant, intentional placeholder frames. Use aspect-ratios like 3:4 or 4:5 for editorial look. Add subtle inset borders or classic arched clip-paths for certain portrait images.",
+    "buttons": "Pill-shaped or sharp rectangular buttons. Primary: Maroon background, Ivory text. Hover: slightly lighter maroon. Secondary: Transparent background with fine maroon border."
+  },
+  "layouts": {
+    "spacing": "Generous Spacing Philosophy. Use 2-3x more spacing. Sections should have py-24 or py-32.",
+    "container": "Max width 7xl with px-6 md:px-12.",
+    "grid": "Bento-style or high-asymmetry for editorial sections. For product listings, 3 or 4 columns with gap-8."
+  },
+  "motion": {
+    "framer_motion": true,
+    "hero_reveal": "Kinetic masked line-by-line headline reveal. Overflow hidden on wrapper, y: '100%' to y: '0%' with easing.",
+    "scroll_reveal": "Subtle fade up and slight y-translation on scroll for images and text blocks.",
+    "parallax": "Subtle parallax on the hero image or background elements.",
+    "marquee": "One slow editorial marquee using react-fast-marquee or framer-motion. Text should be uppercase, tracking wide."
+  },
+  "components_and_pages": {
+    "Home": {
+      "Hero": "Split layout or centered. Headline 'Timeless Elegance, Crafted for You.' Masked text reveal. Diamond divider. Gold pendant photo on silk.",
+      "Marquee": "Slow moving, maroon text on ivory, or ivory on maroon. Words: EXQUISITE CRAFTSMANSHIP \u2022 HERITAGE DESIGNS \u2022 TIMELESS ELEGANCE",
+      "Collections": "Gold Jewellery / Silver Jewellery split cards. Large images, elegant overlay.",
+      "Trust_Badges": "4 items in a row. Certified Authenticity, Exquisite Craftsmanship, Secure Payments, Trusted by Thousands. Thin lucide-react icons.",
+      "Featured_Products": "Carousel or 3-column grid previewing the inner pages.",
+      "About_Teaser": "A short manifesto paragraph with an elegant image.",
+      "Footer": "Maroon background (#963E35) with ivory text. Quick links, customer service, and newsletter signup form (Input + Button)."
+    },
+    "Product_Listing": {
+      "Layout": "Sidebar + Main Grid.",
+      "Sidebar": "Filters: Categories, Metal Purity (18K, 22K, 24K checkboxes), Price range slider.",
+      "Main": "Sort dropdown (Shadcn Select), Product grid, 'Load More' button."
+    },
+    "About_Us": {
+      "Layout": "Editorial layout. Brand story with large typography.",
+      "Manifesto": "Numbered chapters (e.g., 01. THE ORIGIN, 02. THE CRAFT). Asymmetrical image placement."
+    },
+    "Contact_Us": {
+      "Layout": "Elegant form saving to DB. Shadcn Form components. Generous padding, minimalist inputs (border-bottom only or very subtle full border)."
+    }
+  },
+  "image_urls": {
+    "hero_pendant_on_silk": {
+      "url": "https://images.unsplash.com/photo-1721807551235-4072be6913c0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MDV8MHwxfHNlYXJjaHwzfHxnb2xkJTIwcGVuZGFudCUyMG5lY2tsYWNlJTIwamV3ZWxyeSUyMG1hY3JvfGVufDB8fHx8MTc4NjM2NDUyOHww&ixlib=rb-4.1.0&q=85",
+      "description": "Diamond/silver necklace on black mannequin draped with maroon silk. Perfect for hero.",
+      "category": "Hero Background or Featured Image"
+    },
+    "gold_collection_model": {
+      "url": "https://images.unsplash.com/photo-1688382654723-a7366006519b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwyfHxnb2xkJTIwamV3ZWxyeSUyMG1vZGVsJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzg2MzY0NTIyfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Woman wearing a green sari and gold jewelry. Fits Indian heritage.",
+      "category": "Gold Jewellery Collection Card"
+    },
+    "gold_necklace_macro": {
+      "url": "https://images.unsplash.com/photo-1601121141461-920cb1993441?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MDV8MHwxfHNlYXJjaHwyfHxnb2xkJTIwcGVuZGFudCUyMG5lY2tsYWNlJTIwamV3ZWxyeSUyMG1hY3JvfGVufDB8fHx8MTc4NjM2NDUyOHww&ixlib=rb-4.1.0&q=85",
+      "description": "Person wearing Indian style gold necklace.",
+      "category": "Product Image or About Teaser"
+    },
+    "silver_collection": {
+      "url": "https://images.unsplash.com/photo-1589128777073-263566ae5e4d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzR8MHwxfHNlYXJjaHwxfHxzaWx2ZXIlMjBkaWFtb25kJTIwbmVja2xhY2UlMjBtYWNyb3xlbnwwfHx8fDE3ODYzNjQ1MzN8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Silver diamond pendant necklace.",
+      "category": "Silver Jewellery Collection Card"
+    }
+  },
+  "instructions_to_main_agent": {
+    "setup": [
+      "Install react-fast-marquee for the editorial marquee.",
+      "Install framer-motion for kinetic reveals.",
+      "Install lucide-react for thin, elegant icons.",
+      "Configure Tailwind config with the custom colors (Maroon: #963E35, Ivory: #F6EDE2, Gold: #D4AF37, Charcoal: #2A1F1D).",
+      "Import 'Playfair Display' and 'Outfit' fonts in index.html or global CSS."
+    ],
+    "development_rules": [
+      "CRITICAL: Do NOT use a fully transparent header. Use backdrop-blur with a slight ivory/cream tint (e.g., bg-[#F6EDE2]/80).",
+      "CRITICAL: Do NOT use 'Inter' for headings. Must use 'Playfair Display'.",
+      "Set the global background to Ivory (#F6EDE2) and text to Charcoal (#2A1F1D).",
+      "For image placeholders, use the provided Unsplash URLs. Style the containers with a 1px solid #DBCDC0 border to make them look like intentional elegant frames.",
+      "Add a diamond SVG icon (<svg viewBox=\"0 0 24 24\" fill=\"currentColor\" class=\"w-4 h-4 text-accent\"><path d=\"M12 2L22 12L12 22L2 12L12 2Z\"/></svg>) as a frequent divider element between sections or headings.",
+      "Build the layout using React Router to navigate between Home, Shop (Listing), About, and Contact pages.",
+      "Ensure all interactive elements have data-testid attributes."
+    ]
+  },
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. Avoid this: make creative, distinctive frontends that surprise and delight.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters.",
+    "You MUST NOT apply universal transition. Eg: transition: all.",
+    "You MUST NOT center align the app container, ie do not add .App { text-align: center; } in the css file.",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations.",
+    "Use 2-3x more spacing than feels comfortable.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations separate good from extraordinary."
+  ]
+}
