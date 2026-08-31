@@ -37,8 +37,8 @@ import goldJhumka2 from "@/assets/products/gold-jhumka-2.png";
 import goldJhumka3 from "@/assets/products/gold-jhumka-3.png";
 
 import goldPendant1 from "@/assets/products/gold-pendant-1.png";
-import goldPendant2 from "@/assets/products/gold-earings-2.png";
-import goldPendant3 from "@/assets/products/gold-earings-3.png";
+import goldPendant2 from "@/assets/products/gold-pendant-2.png";
+import goldPendant3 from "@/assets/products/gold-pendant-3.png";
 
 import goldBangles1 from "@/assets/products/gold-bangles-1.png";
 import goldBangles2 from "@/assets/products/gold-bangles-2.png";
