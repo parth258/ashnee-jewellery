@@ -15,6 +15,7 @@ export const ProductCard = ({ product, index = 0 }) => (
   >
     <Link to={`/product/${product.id}`} data-testid={`product-link-${product.id}`} className="block">
       <JewelFrame
+        image={product.images && product.images[0]}
         label={product.category}
         aspect="aspect-[4/5]"
         testId={`product-image-${product.id}`}

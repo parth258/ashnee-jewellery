@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { ChevronRight, ArrowLeft, ArrowRight, Gem, HandHeart, ShieldCheck, Truck } from "lucide-react";
 import { DiamondDivider, Diamond } from "@/components/Diamond";
 import { Reveal } from "@/components/Reveal";
-import { JewelFrame } from "@/components/JewelFrame";
+import { ProductGallery } from "@/components/ProductGallery";
 import { ProductCard } from "@/components/ProductCard";
 import { findProduct, ALL_PRODUCTS } from "@/data/products";
 
@@ -54,7 +54,7 @@ const ProductPage = () => {
 
       <section className="mx-auto grid max-w-7xl gap-16 px-6 py-16 md:px-12 lg:grid-cols-2 lg:py-24">
         <Reveal>
-          <JewelFrame label={product.category} aspect="aspect-[4/5]" testId="product-detail-image" className="shadow-[0_24px_70px_-20px_rgba(150,62,53,0.25)]" />
+           <ProductGallery images={product.images} label={product.category} testId="product-detail-gallery" />
         </Reveal>
 
         <Reveal delay={0.15} className="flex flex-col justify-center">
