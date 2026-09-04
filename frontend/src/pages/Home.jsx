@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Gem, HandHeart, ShieldCheck, BadgeCheck } from "lucide-react";
+import { ArrowRight, Gem } from "lucide-react";
 import { Diamond, DiamondDivider } from "@/components/Diamond";
 import { Reveal } from "@/components/Reveal";
 import { JewelFrame } from "@/components/JewelFrame";
@@ -23,13 +23,6 @@ const MARQUEE_WORDS = [
   "Timeless Elegance",
   "A Bond of Blessing",
   "Certified Authenticity",
-];
-
-const TRUST = [
-  { icon: Gem, title: "Certified Authenticity", testId: "trust-badge-authenticity" },
-  { icon: HandHeart, title: "Exquisite Craftsmanship", testId: "trust-badge-craftsmanship" },
-  { icon: ShieldCheck, title: "Secure Payments", testId: "trust-badge-payments" },
-  { icon: BadgeCheck, title: "Trusted by Thousands", testId: "trust-badge-trusted" },
 ];
 
 const MaskedLine = ({ children, delay = 0 }) => (
@@ -192,7 +185,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section data-testid="collections-section" className="mx-auto max-w-7xl px-6 py-24 md:px-12 lg:py-32">
+      <section data-testid="collections-section" className="mx-auto max-w-7xl px-6 pt-24 pb-16 md:px-12 lg:pt-32 lg:pb-20">
         <Reveal className="text-center">
           <DiamondDivider testId="collections-divider" className="text-charcoal" />
           <h2 data-testid="collections-heading" className="mt-6 font-serif text-4xl tracking-tight text-charcoal sm:text-5xl">
@@ -223,22 +216,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section data-testid="trust-section" className="border-y border-hairline bg-ivory">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-y-12 px-6 py-16 md:px-12 lg:grid-cols-4">
-          {TRUST.map((t, i) => (
-            <Reveal key={t.title} delay={i * 0.1} className="flex flex-col items-center gap-4 text-center">
-              <t.icon data-testid={t.testId} className="h-8 w-8 text-maroon" strokeWidth={1} />
-              <span className="text-[11px] uppercase leading-relaxed tracking-[0.25em] text-charcoal">
-                {t.title.split(" ").map((w, wi) => (
-                  <span key={w} className={wi === 0 ? "block" : "block text-clay"}>{w}</span>
-                ))}
-              </span>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      <section data-testid="featured-section" className="mx-auto max-w-7xl px-6 py-24 md:px-12 lg:py-32">
+      <section data-testid="featured-section" className="mx-auto max-w-7xl px-6 pt-16 pb-24 md:px-12 lg:pt-20 lg:pb-32">
         <Reveal className="text-center">
           <DiamondDivider testId="featured-divider" className="text-charcoal" />
           <h2 data-testid="featured-heading" className="mt-6 font-serif text-4xl tracking-tight text-charcoal sm:text-5xl">

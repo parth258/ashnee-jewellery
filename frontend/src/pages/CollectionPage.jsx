@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { ChevronRight, SlidersHorizontal, ArrowDown } from "lucide-react";
+import { ChevronRight, SlidersHorizontal, ArrowDown, RotateCcw } from "lucide-react";
 import { DiamondDivider } from "@/components/Diamond";
 import { Reveal } from "@/components/Reveal";
 import { ProductCard } from "@/components/ProductCard";
@@ -56,6 +56,13 @@ const CollectionPage = ({ metal }) => {
   const togglePurity = (value) =>
     setPurity((prev) => (prev.includes(value) ? prev.filter((p) => p !== value) : [...prev, value]));
 
+  const hasActiveFilters = category !== "All" || purity.length > 0;
+
+  const resetFilters = () => {
+    setCategory("All");
+    setPurity([]);
+  };
+
   return (
     <main data-testid={`${cfg.testId}-collection-page`}>
       <section className="bg-maroon text-ivory">
@@ -78,39 +85,56 @@ const CollectionPage = ({ metal }) => {
       </section>
 
       <section className="mx-auto grid max-w-7xl gap-14 px-6 py-16 md:px-12 lg:grid-cols-[260px_1fr] lg:py-24">
-        <aside data-testid="filter-sidebar" className="space-y-12 lg:sticky lg:top-28 lg:self-start">
-          <div>
+        <aside
+          data-testid="filter-sidebar"
+          className="space-y-8 border border-hairline bg-sand/40 p-6 sm:p-8 lg:sticky lg:top-28 lg:self-start"
+        >
+          <div className="flex items-center justify-between gap-4 border-b border-hairline pb-5">
             <h3 className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-charcoal">
               <SlidersHorizontal className="h-3.5 w-3.5 text-maroon" strokeWidth={1.5} /> Filter
             </h3>
+            <button
+              data-testid="filter-reset"
+              onClick={resetFilters}
+              disabled={!hasActiveFilters}
+              className="flex items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] text-clay transition-colors duration-300 hover:text-maroon disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              Reset All <RotateCcw className="h-3.5 w-3.5" strokeWidth={1.5} />
+            </button>
           </div>
 
-          <div>
+          <div className="border-b border-hairline pb-8">
             <h4 className="text-[11px] uppercase tracking-[0.25em] text-clay">Categories</h4>
-            <ul className="mt-5 space-y-3">
+            <div className="mt-5 flex flex-wrap gap-3">
               {categories.map((c) => (
-                <li key={c}>
-                  <button
-                    data-testid={`filter-category-${c.toLowerCase().replace(/\s+/g, "-")}`}
-                    onClick={() => setCategory(c)}
-                    className={`text-sm font-light transition-colors duration-300 ${
-                      category === c ? "font-normal text-maroon" : "text-clay hover:text-charcoal"
-                    }`}
-                  >
-                    {c}
-                  </button>
-                </li>
+                <button
+                  key={c}
+                  data-testid={`filter-category-${c.toLowerCase().replace(/\s+/g, "-")}`}
+                  onClick={() => setCategory(c)}
+                  className={`rounded-full border px-5 py-2.5 text-sm font-light transition-colors duration-300 ${
+                    category === c
+                      ? "border-maroon bg-maroon text-ivory"
+                      : "border-maroon/30 text-charcoal hover:border-maroon hover:text-maroon"
+                  }`}
+                >
+                  {c}
+                </button>
               ))}
-            </ul>
+            </div>
           </div>
 
           <div>
             <h4 className="text-[11px] uppercase tracking-[0.25em] text-clay">Metal Purity</h4>
-            <div className="mt-5 space-y-4">
+            <div className="mt-5 flex flex-wrap gap-3">
               {cfg.purities.map((p) => (
-                <label key={p} className="flex cursor-pointer items-center gap-3 text-sm font-light text-clay">
+                <label
+                  key={p}
+                  data-testid={`filter-purity-${p.toLowerCase().replace(/[\s.]+/g, "-")}`}
+                  className={`flex cursor-pointer items-center gap-3 rounded-lg border px-5 py-3 text-sm font-light transition-colors duration-300 ${
+                    purity.includes(p) ? "border-maroon text-maroon" : "border-maroon/30 text-charcoal"
+                  }`}
+                >
                   <Checkbox
-                    data-testid={`filter-purity-${p.toLowerCase().replace(/[\s.]+/g, "-")}`}
                     checked={purity.includes(p)}
                     onCheckedChange={() => togglePurity(p)}
                     className="border-maroon/40 data-[state=checked]:bg-maroon data-[state=checked]:text-ivory"
