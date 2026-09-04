@@ -64,7 +64,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div>
+        {/* <div>
           <h4 className="text-xs uppercase tracking-[0.3em] text-gold">Customer Service</h4>
           <ul className="mt-6 space-y-3 text-sm font-light text-ivory/75">
             <li><a data-testid="footer-link-shipping" className="transition-colors duration-300 hover:text-gold" href="#">Shipping &amp; Delivery</a></li>
@@ -73,7 +73,7 @@ const Footer = () => {
             <li><a data-testid="footer-link-privacy" className="transition-colors duration-300 hover:text-gold" href="#">Privacy Policy</a></li>
             <li><a data-testid="footer-link-faq" className="transition-colors duration-300 hover:text-gold" href="#">FAQ&rsquo;s</a></li>
           </ul>
-        </div>
+        </div> */}
 
         <div>
           <h4 className="text-xs uppercase tracking-[0.3em] text-gold">Newsletter</h4>

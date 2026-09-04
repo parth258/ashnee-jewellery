@@ -46,9 +46,9 @@ const MaskedLine = ({ children, delay = 0 }) => (
 );
 
 const CollectionCard = ({ title, lines, blurb, cta, to, image, testId }) => (
-  <Reveal testId={testId}>
-    <div className="group grid overflow-hidden border border-hairline bg-maroon text-ivory shadow-[0_10px_40px_-10px_rgba(150,62,53,0.15)] sm:grid-cols-2">
-      <div className="flex flex-col justify-center gap-5 p-10 lg:p-12">
+  <Reveal testId={testId} className="h-full">
+    <div className="group grid overflow-hidden border border-hairline bg-maroon text-ivory shadow-[0_10px_40px_-10px_rgba(150,62,53,0.15)] sm:grid-cols-2 lg:min-h-[470px]">
+            <div className="flex h-full flex-col gap-5 p-10 lg:p-12">
         <h3 className="font-serif text-3xl leading-tight">
           {lines.map((l) => (
             <span key={l} className="block">
@@ -56,18 +56,28 @@ const CollectionCard = ({ title, lines, blurb, cta, to, image, testId }) => (
             </span>
           ))}
         </h3>
-        <DiamondDivider testId={`${testId}-divider`} className="justify-start text-ivory" />
-        <p className="text-sm font-light leading-relaxed text-ivory/75">{blurb}</p>
-        <div>
+
+        <DiamondDivider
+          testId={`${testId}-divider`}
+          className="justify-start text-ivory"
+        />
+
+        <p className="text-sm font-light leading-relaxed text-ivory/75">
+          {blurb}
+        </p>
+
+        <div className="mt-auto pt-5">
           <Link
             to={to}
             data-testid={`${testId}-cta`}
             className="inline-flex items-center gap-3 border border-ivory/40 px-7 py-3 text-[11px] uppercase tracking-[0.25em] transition-colors duration-300 hover:border-gold hover:bg-gold hover:text-charcoal"
           >
-            {cta} <ArrowRight className="h-3.5 w-3.5" strokeWidth={1.5} />
+            {cta}
+            <ArrowRight className="h-3.5 w-3.5" strokeWidth={1.5} />
           </Link>
         </div>
       </div>
+
       <div className="relative min-h-[280px] overflow-hidden">
         <img
           src={image}

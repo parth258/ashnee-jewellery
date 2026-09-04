@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import Home from "@/pages/Home";
 import CollectionPage from "@/pages/CollectionPage";
 import ProductPage from "@/pages/ProductPage";
+import SearchPage from "@/pages/SearchPage";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 const GRAIN =
@@ -47,6 +48,7 @@ function App() {
           <Route path="/gold-jewellery" element={<CollectionPage key="gold" metal="gold" />} />
           <Route path="/silver-jewellery" element={<CollectionPage key="silver" metal="silver" />} />
 	  <Route path="/product/:id" element={<ProductPage />} />
+    <Route path="/search" element={<SearchPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

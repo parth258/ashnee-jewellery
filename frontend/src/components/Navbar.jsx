@@ -46,9 +46,15 @@ const Navbar = () => {
         </nav>
 
         <div className="hidden items-center gap-5 lg:flex">
-          <button data-testid="nav-search-button" aria-label="Search" className="text-ivory/75 transition-colors duration-300 hover:text-gold">
+          <Link to="/search" data-testid="nav-search-button" aria-label="Search" className="text-ivory/75 transition-colors duration-300 hover:text-gold">
             <Search className="h-[18px] w-[18px]" strokeWidth={1.5} />
-          </button>
+          </Link>
+          {/* <button data-testid="nav-cart-button" aria-label="Shopping bag" className="relative text-ivory/75 transition-colors duration-300 hover:text-gold">
+            <ShoppingBag className="h-[18px] w-[18px]" strokeWidth={1.5} />
+            <span data-testid="nav-cart-count" className="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-gold text-[9px] font-medium text-charcoal">
+              0
+            </span>
+          </button> */}
           <button data-testid="nav-account-button" aria-label="Account" className="text-ivory/75 transition-colors duration-300 hover:text-gold">
             <User className="h-[18px] w-[18px]" strokeWidth={1.5} />
           </button>
