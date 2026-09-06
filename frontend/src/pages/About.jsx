@@ -2,35 +2,9 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { DiamondDivider } from "@/components/Diamond";
 import { Reveal } from "@/components/Reveal";
-import { JewelFrame } from "@/components/JewelFrame";
+import bondOfBlessing from "@/assets/story/bond-of-blessing.jpeg";
 
-const ABOUT_IMG =
-  "https://images.unsplash.com/photo-1601121141461-920cb1993441?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MDV8MHwxfHNlYXJjaHwyfHxnb2xkJTIwcGVuZGFudCUyMG5lY2tsYWNlJTIwamV3ZWxyeSUyMG1hY3JvfGVufDB8fHx8MTc4NjM2NDUyOHww&ixlib=rb-4.1.0&q=85";
-const CRAFT_IMG =
-  "https://images.unsplash.com/photo-1721807551235-4072be6913c0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MDV8MHwxfHNlYXJjaHwzfHxnb2xkJTIwcGVuZGFudCUyMG5lY2tsYWNlJTIwamV3ZWxyeSUyMG1hY3JvfGVufDB8fHx8MTc4NjM2NDUyOHww&ixlib=rb-4.1.0&q=85";
-
-const CHAPTERS = [
-  {
-    num: "01",
-    title: "The Origin",
-    body: "Ashnee began at a single goldsmith's bench, where a father taught his daughter that jewellery is never just metal — it is a blessing poured into form. Every Ashnee piece still begins the same way: with a prayer, a sketch, and a promise.",
-    image: ABOUT_IMG,
-    label: "Heirloom gold necklace",
-  },
-  {
-    num: "02",
-    title: "The Craft",
-    body: "Our karigars shape 18K and 22K gold and 92.5 sterling silver by hand — filing, setting and polishing each stone until it catches light the way a memory catches the heart. No shortcuts, no compromises, only patience.",
-    image: CRAFT_IMG,
-    label: "Pendant on silk",
-    flip: true,
-  },
-  {
-    num: "03",
-    title: "The Promise",
-    body: "Certified authenticity, transparent pricing, and pieces made to outlive trends. When you gift Ashnee, you gift something meant to be handed down — a bond of blessing, from our family to yours.",
-  },
-];
+const BOND_IMG = bondOfBlessing;
 
 const STATS = [
   { value: "25+", label: "Years of Craft", testId: "stat-years" },
@@ -56,31 +30,12 @@ const About = () => (
       </div>
     </section>
 
-    <section className="mx-auto max-w-7xl space-y-28 px-6 py-24 md:px-12 lg:py-32">
-      {CHAPTERS.map((c) => (
-        <Reveal key={c.num} testId={`chapter-${c.num}`}>
-          {c.image ? (
-            <div className={`grid items-center gap-14 lg:grid-cols-2 ${c.flip ? "" : ""}`}>
-              <div className={c.flip ? "lg:order-2" : ""}>
-                <span className="block font-serif text-8xl leading-none text-outline-maroon">{c.num}</span>
-                <h2 className="mt-4 font-serif text-3xl tracking-tight text-charcoal sm:text-4xl">{c.title}</h2>
-                <DiamondDivider className="mt-6 justify-start text-charcoal" />
-                <p className="mt-6 max-w-md text-base font-light leading-relaxed text-clay">{c.body}</p>
-              </div>
-              <div className={c.flip ? "lg:order-1" : ""}>
-                <JewelFrame image={c.image} label={c.label} arch aspect="aspect-[4/5]" testId={`chapter-image-${c.num}`} className="mx-auto max-w-md" />
-              </div>
-            </div>
-          ) : (
-            <div className="mx-auto max-w-2xl text-center">
-              <span className="block font-serif text-8xl leading-none text-outline-maroon">{c.num}</span>
-              <h2 className="mt-4 font-serif text-3xl tracking-tight text-charcoal sm:text-4xl">{c.title}</h2>
-              <DiamondDivider className="mt-6 text-charcoal" />
-              <p className="mt-6 text-base font-light leading-relaxed text-clay">{c.body}</p>
-            </div>
-          )}
-        </Reveal>
-      ))}
+    <section data-testid="bond-of-blessing-section" className="relative w-full overflow-hidden">
+      <img
+        src={BOND_IMG}
+        alt="Ashnee craftsman setting a ruby and diamond piece by hand"
+        className="h-auto w-full object-cover"
+      />
     </section>
 
     <section data-testid="about-stats" className="border-y border-hairline bg-sand/60">
