@@ -55,20 +55,20 @@ const About = () => (
           <h2 data-testid="about-cta-heading" className="font-serif text-4xl tracking-tight sm:text-5xl">
             Find your perfect sparkle
           </h2>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-5">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <Link
               to="/gold-jewellery"
               data-testid="about-cta-gold"
-              className="inline-flex items-center gap-3 bg-ivory px-9 py-4 text-[11px] uppercase tracking-[0.25em] text-maroon transition-colors duration-300 hover:bg-gold hover:text-charcoal"
+              className="inline-flex items-center gap-2 rounded-full bg-ivory px-8 py-2.5 text-[11px] uppercase tracking-[0.25em] text-maroon transition-colors duration-300 hover:bg-gold hover:text-charcoal"
             >
-              Explore Gold <ArrowRight className="h-3.5 w-3.5" strokeWidth={1.5} />
+              Explore Gold <ArrowRight className="h-3 w-3" strokeWidth={1.5} />
             </Link>
             <Link
               to="/silver-jewellery"
               data-testid="about-cta-silver"
-              className="inline-flex items-center gap-3 border border-ivory/40 px-9 py-4 text-[11px] uppercase tracking-[0.25em] transition-colors duration-300 hover:border-gold hover:text-gold"
+              className="inline-flex items-center gap-2 rounded-full border border-ivory/40 px-8 py-2.5 text-[11px] uppercase tracking-[0.25em] transition-colors duration-300 hover:border-gold hover:text-gold"
             >
-              Explore Silver <ArrowRight className="h-3.5 w-3.5" strokeWidth={1.5} />
+              Explore Silver <ArrowRight className="h-3 w-3" strokeWidth={1.5} />
             </Link>
           </div>
         </Reveal>

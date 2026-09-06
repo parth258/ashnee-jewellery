@@ -111,7 +111,7 @@ const CollectionPage = ({ metal }) => {
                   key={c}
                   data-testid={`filter-category-${c.toLowerCase().replace(/\s+/g, "-")}`}
                   onClick={() => setCategory(c)}
-                  className={`rounded-full border px-5 py-2.5 text-sm font-light transition-colors duration-300 ${
+                  className={`w-full rounded-full border px-8 py-2.5 text-sm font-light transition-colors duration-300 ${
                     category === c
                       ? "border-maroon bg-maroon text-ivory"
                       : "border-maroon/30 text-charcoal hover:border-maroon hover:text-maroon"

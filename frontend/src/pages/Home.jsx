@@ -62,13 +62,13 @@ const CollectionCard = ({ title, lines, blurb, cta, to, image, testId }) => (
 
         <div className="mt-auto pt-5">
           <Link
-            to={to}
-            data-testid={`${testId}-cta`}
-            className="inline-flex items-center gap-3 border border-ivory/40 px-7 py-3 text-[11px] uppercase tracking-[0.25em] transition-colors duration-300 hover:border-gold hover:bg-gold hover:text-charcoal"
-          >
-            {cta}
-            <ArrowRight className="h-3.5 w-3.5" strokeWidth={1.5} />
-          </Link>
+              to={to}
+              data-testid={`${testId}-cta`}
+              className="inline-flex items-center gap-2 rounded-full border border-ivory/40 px-8 py-3 text-[11px] uppercase tracking-[0.25em] transition-colors duration-300 hover:border-gold hover:bg-gold hover:text-charcoal"
+            >
+              {cta}
+              <ArrowRight className="h-3 w-3" strokeWidth={1.5} />
+        </Link>
         </div>
       </div>
 
@@ -124,16 +124,16 @@ const Home = () => {
         <Reveal className="text-center">
           <DiamondDivider testId="collections-divider" className="text-charcoal" />
           <h2 data-testid="collections-heading" className="mt-6 font-serif text-4xl tracking-tight text-charcoal sm:text-5xl">
-            Our Collections
+            EXPLORE COLLECTION
           </h2>
-          <p className="mt-4 text-sm font-light uppercase tracking-[0.3em] text-clay">Find your perfect sparkle</p>
+          <p className="mt-4 text-sm font-light uppercase tracking-[0.3em] text-clay">Made for the moments you’ll remember</p>
         </Reveal>
 
         <div className="mt-16 grid gap-10 lg:grid-cols-2">
           <CollectionCard
             title="Gold Jewellery"
             lines={["Gold", "Jewellery"]}
-            blurb="Timeless gold jewellery crafted in 18K & 22K gold to celebrate every special moment."
+            blurb="Gold that carries memories from one generation to the next."
             cta="Explore Gold"
             to="/gold-jewellery"
             image={GOLD_IMG}
@@ -142,7 +142,7 @@ const Home = () => {
           <CollectionCard
             title="Silver Jewellery"
             lines={["Silver", "Jewellery"]}
-            blurb="Elegant silver designs that add grace to your everyday style."
+            blurb="Silver that becomes part of your everyday story."
             cta="Explore Silver"
             to="/silver-jewellery"
             image={SILVER_IMG}
@@ -167,13 +167,13 @@ const Home = () => {
         </div>
 
         <Reveal className="mt-16 text-center">
-          <Link
-            to="/gold-jewellery"
-            data-testid="featured-view-all-button"
-            className="inline-flex items-center gap-3 border border-maroon px-9 py-4 text-[11px] uppercase tracking-[0.25em] text-maroon transition-colors duration-300 hover:bg-maroon hover:text-ivory"
-          >
-            View All Pieces <ArrowRight className="h-3.5 w-3.5" strokeWidth={1.5} />
-          </Link>
+       <Link
+        to="/gold-jewellery"
+        data-testid="featured-view-all-button"
+        className="inline-flex items-center gap-2 rounded-full border border-maroon px-8 py-2.5 text-[11px] uppercase tracking-[0.25em] text-maroon transition-colors duration-300 hover:bg-maroon hover:text-ivory"
+      >
+        View All Pieces <ArrowRight className="h-3 w-3" strokeWidth={1.5} />
+      </Link>
         </Reveal>
       </section>
 

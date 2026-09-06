@@ -75,7 +75,7 @@ const Footer = () => {
           </ul>
         </div> */}
 
-        <div>
+        {/* <div>
           <h4 className="text-xs uppercase tracking-[0.3em] text-gold">Newsletter</h4>
           <p className="mt-6 text-sm font-light leading-relaxed text-ivory/70">
             Subscribe to get special updates and exclusive offers.
@@ -100,7 +100,7 @@ const Footer = () => {
               <Send className="h-4 w-4" strokeWidth={1.5} />
             </button>
           </form>
-        </div>
+        </div> */}
       </div>
 
       <div className="border-t border-ivory/15">
