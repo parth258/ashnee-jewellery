@@ -9,7 +9,7 @@ const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 const INFO = [
   { icon: MapPin, title: "Visit the Boutique", lines: ["Ashnee Jewels, Gopal Ji Ka Rasta", "Chora Rasta, Jaipur 302002"], testId: "contact-info-visit" },
-  { icon: Phone, title: "Call Us", lines: ["+91 98280 72412", "Mon – Sat, 10am – 8pm"], testId: "contact-info-call" },
+  { icon: Phone, title: "Call Us", lines: ["+91 98280 72412"], testId: "contact-info-call" },
   { icon: Mail, title: "Write to Us", lines: ["hello@ashnee.in", "care@ashnee.in"], testId: "contact-info-write" },
   { icon: Clock, title: "Boutique Hours", lines: ["Monday – Saturday", "10:00 AM – 8:00 PM IST"], testId: "contact-info-hours" },
 ];
@@ -43,10 +43,14 @@ const Contact = () => {
         <div className="mx-auto max-w-7xl px-6 py-20 text-center md:px-12 lg:py-28">
           <Reveal>
             <p data-testid="contact-eyebrow" className="text-[11px] uppercase tracking-[0.4em] text-gold">We Would Love to Hear From You</p>
-            <h1 data-testid="contact-title" className="mt-6 font-serif text-4xl tracking-tight sm:text-5xl lg:text-6xl">
+            <h1 data-testid="contact-title" className="mx-auto mt-6 max-w-3xl font-serif text-4xl leading-tight tracking-tight sm:text-5xl lg:text-6xl">
               Contact <span className="italic text-gold">Us</span>
             </h1>
             <DiamondDivider testId="contact-divider" className="mt-8" />
+            <p className="mx-auto mt-8 max-w-xl text-base font-light leading-relaxed text-ivory/75">
+              Whether it's your first piece or your fifth, we're here to help you find
+              something worth passing down. Reach out and let's talk.
+            </p>
           </Reveal>
         </div>
       </section>
