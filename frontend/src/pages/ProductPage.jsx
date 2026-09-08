@@ -101,14 +101,14 @@ const ProductPage = () => {
             </Link>
           </div>
 
-          <ul className="mt-12 grid grid-cols-2 gap-5">
+          {/* <ul className="mt-12 grid grid-cols-2 gap-5">
             {ASSURANCES.map((a) => (
               <li key={a.text} data-testid={a.testId} className="flex items-center gap-3 text-xs font-light text-clay">
                 <a.icon className="h-4 w-4 shrink-0 text-maroon" strokeWidth={1.25} />
                 {a.text}
               </li>
             ))}
-          </ul>
+          </ul> */}
         </Reveal>
       </section>
 
