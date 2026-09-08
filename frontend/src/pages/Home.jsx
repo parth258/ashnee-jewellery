@@ -19,11 +19,13 @@ const BOND_IMG = bondOfBlessing;
   
 
 const MARQUEE_WORDS = [
-  "Exquisite Craftsmanship",
-  "Heritage Designs",
-  "Timeless Elegance",
-  "A Bond of Blessing",
-  "Certified Authenticity",
+  "Diamond",
+  "Silver",
+  "Gemstones",
+  "Fine Jewellary",
+  "Solitaire",
+  "Handcrafted jewellery",
+  "Heirloom pieces",
 ];
 
 const MaskedLine = ({ children, delay = 0 }) => (
