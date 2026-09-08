@@ -9,7 +9,8 @@ import { GOLD_PRODUCTS, SILVER_PRODUCTS, CATEGORIES } from "@/data/products";
 
 const CONFIG = {
   gold: {
-    title: "Gold Jewellery",
+    titleMain: "Gold",
+    titleAccent: "Jewellery",
     crumb: "Gold Jewellery",
     desc: "Gold that carries memories from one generation to the next.",
     products: GOLD_PRODUCTS,
@@ -17,7 +18,8 @@ const CONFIG = {
     testId: "gold",
   },
   silver: {
-    title: "Silver Jewellery",
+    titleMain: "Silver",
+    titleAccent: "Jewellery",
     crumb: "Silver Jewellery",
     desc: "Silver that becomes part of your everyday story.",
     products: SILVER_PRODUCTS,
@@ -74,10 +76,10 @@ const CollectionPage = ({ metal }) => {
               <span className="text-gold">{cfg.crumb}</span>
             </nav>
             <h1 data-testid="collection-title" className="mt-6 font-serif text-4xl tracking-tight sm:text-5xl lg:text-6xl">
-              {cfg.title}
+              {cfg.titleMain} <span className="italic text-gold">{cfg.titleAccent}</span>
             </h1>
             <DiamondDivider className="mt-6 justify-center text-ivory" />
-            <p data-testid="collection-description" className="mx-auto mt-6 max-w-lg text-sm font-light leading-relaxed text-ivory/75">
+            <p data-testid="collection-description" className="mx-auto mt-6 max-w-lg text-base font-light leading-relaxed text-ivory/75">
               {cfg.desc}
             </p>
           </Reveal>

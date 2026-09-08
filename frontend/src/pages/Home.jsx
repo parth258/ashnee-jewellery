@@ -126,9 +126,9 @@ const Home = () => {
         <Reveal className="text-center">
           <DiamondDivider testId="collections-divider" className="text-charcoal" />
           <h2 data-testid="collections-heading" className="mt-6 font-serif text-4xl tracking-tight text-charcoal sm:text-5xl">
-            EXPLORE COLLECTION
+            Explore Collection
           </h2>
-          <p className="mt-4 text-sm font-light uppercase tracking-[0.3em] text-clay">Made for the moments you’ll remember</p>
+          <p className="mt-4 text-base font-light capitalize tracking-[0.3em] text-clay">Made for the moments you’ll remember</p>
         </Reveal>
 
         <div className="mt-16 grid gap-10 lg:grid-cols-2">
@@ -159,7 +159,7 @@ const Home = () => {
           <h2 data-testid="featured-heading" className="mt-6 font-serif text-4xl tracking-tight text-charcoal sm:text-5xl">
             The Signature Edit
           </h2>
-          <p className="mt-4 text-sm font-light uppercase tracking-[0.3em] text-clay">Handpicked pieces, blessed beginnings</p>
+          <p className="mt-4 text-base font-light capitalize tracking-[0.3em] text-clay">Handpicked pieces, blessed beginnings</p>
         </Reveal>
 
         <div className="mt-16 grid grid-cols-2 gap-8 lg:grid-cols-4">
