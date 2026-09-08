@@ -8,10 +8,10 @@ import { Reveal } from "@/components/Reveal";
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 const INFO = [
-  { icon: MapPin, title: "Visit the Boutique", lines: ["Ashnee Jewels, Gopal Ji Ka Rasta", "Chora Rasta, Jaipur 302002"], testId: "contact-info-visit" },
+  { icon: MapPin, title: "Visit Us At", lines: ["Ashnee Jewels, Gopal Ji Ka Rasta", "Chora Rasta, Jaipur 302002"], testId: "contact-info-visit" },
   { icon: Phone, title: "Call Us", lines: ["+91 98280 72412"], testId: "contact-info-call" },
   { icon: Mail, title: "Write to Us", lines: ["hello@ashnee.in", "care@ashnee.in"], testId: "contact-info-write" },
-  { icon: Clock, title: "Boutique Hours", lines: ["Monday – Saturday", "10:00 AM – 8:00 PM IST"], testId: "contact-info-hours" },
+  { icon: Clock, title: "Working Hours", lines: ["Monday – Saturday", "10:00 AM – 8:00 PM IST"], testId: "contact-info-hours" },
 ];
 
 const inputCls =
@@ -48,7 +48,7 @@ const Contact = () => {
             </h1>
             <DiamondDivider testId="contact-divider" className="mt-8" />
             <p className="mx-auto mt-8 max-w-xl text-base font-light leading-relaxed text-ivory/75">
-              Your vision deserves a personal touch. Step in for a consultation or connect with us — we’re here to make every detail feel distinctly yours.
+              Step in for a consultation or connect with us — we’re here to make every detail feel distinctly yours.
             </p>
           </Reveal>
         </div>

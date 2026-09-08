@@ -11,7 +11,7 @@ const CONFIG = {
   gold: {
     title: "Gold Jewellery",
     crumb: "Gold Jewellery",
-    desc: "Exquisite gold jewellery crafted to celebrate your most precious moments.",
+    desc: "Gold that carries memories from one generation to the next.",
     products: GOLD_PRODUCTS,
     purities: ["18K Gold", "22K Gold"],
     testId: "gold",
@@ -19,7 +19,7 @@ const CONFIG = {
   silver: {
     title: "Silver Jewellery",
     crumb: "Silver Jewellery",
-    desc: "Classic silver designs that add grace to your everyday style.",
+    desc: "Silver that becomes part of your everyday story.",
     products: SILVER_PRODUCTS,
     purities: ["92.5 Sterling"],
     testId: "silver",
@@ -67,8 +67,8 @@ const CollectionPage = ({ metal }) => {
     <main data-testid={`${cfg.testId}-collection-page`}>
       <section className="bg-maroon text-ivory">
         <div className="mx-auto max-w-7xl px-6 py-16 md:px-12 lg:py-20">
-          <Reveal>
-            <nav data-testid="breadcrumb" className="flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-ivory/60">
+          <Reveal className="text-center">
+            <nav data-testid="breadcrumb" className="flex items-center justify-start gap-2 text-[10px] uppercase tracking-[0.3em] text-ivory/60">
               <Link to="/" className="transition-colors duration-300 hover:text-gold" data-testid="breadcrumb-home">Home</Link>
               <ChevronRight className="h-3 w-3" strokeWidth={1.5} />
               <span className="text-gold">{cfg.crumb}</span>
@@ -76,8 +76,8 @@ const CollectionPage = ({ metal }) => {
             <h1 data-testid="collection-title" className="mt-6 font-serif text-4xl tracking-tight sm:text-5xl lg:text-6xl">
               {cfg.title}
             </h1>
-            <DiamondDivider className="mt-6 justify-start text-ivory" />
-            <p data-testid="collection-description" className="mt-6 max-w-lg text-sm font-light leading-relaxed text-ivory/75">
+            <DiamondDivider className="mt-6 justify-center text-ivory" />
+            <p data-testid="collection-description" className="mx-auto mt-6 max-w-lg text-sm font-light leading-relaxed text-ivory/75">
               {cfg.desc}
             </p>
           </Reveal>
