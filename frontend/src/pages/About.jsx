@@ -23,8 +23,9 @@ const About = () => (
           </h1>
           <DiamondDivider testId="about-divider" className="mt-8" />
           <p className="mx-auto mt-8 max-w-xl text-base font-light leading-relaxed text-ivory/75">
-            At Ashnee, every piece of jewellery is crafted with love, blessings and
-            perfection to be cherished forever.
+            At Ashnee, every piece of jewellery is crafted with love, 
+            <br />
+            blessings and perfection to be cherished forever.
           </p>
         </Reveal>
       </div>

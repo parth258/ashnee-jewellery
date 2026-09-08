@@ -40,8 +40,8 @@ const Footer = () => {
             </span>
           </span>
         </Link>
-        <p className="mt-6 max-w-xs text-sm font-light leading-relaxed text-ivory/70">
-          Jewellery that celebrates every bond with love and blessings.
+        <p className="mt-6 max-w-xs text-base font-light leading-relaxed text-ivory/70">
+          Jewellery that becomes a part of your moments, your memories, and your story.
         </p>
         <div className="mt-6 flex items-center gap-4">
           <a href="#" aria-label="Instagram" data-testid="footer-instagram-link" className="flex h-9 w-9 items-center justify-center rounded-full border border-ivory/25 text-ivory/70 transition-colors duration-300 hover:border-gold hover:text-gold">

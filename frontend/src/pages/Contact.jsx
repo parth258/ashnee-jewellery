@@ -42,14 +42,13 @@ const Contact = () => {
       <section className="bg-maroon text-ivory">
         <div className="mx-auto max-w-7xl px-6 py-20 text-center md:px-12 lg:py-28">
           <Reveal>
-            <p data-testid="contact-eyebrow" className="text-[11px] uppercase tracking-[0.4em] text-gold">We Would Love to Hear From You</p>
+            {/* <p data-testid="contact-eyebrow" className="text-[11px] uppercase tracking-[0.4em] text-gold"></p> */}
             <h1 data-testid="contact-title" className="mx-auto mt-6 max-w-3xl font-serif text-4xl leading-tight tracking-tight sm:text-5xl lg:text-6xl">
               Contact <span className="italic text-gold">Us</span>
             </h1>
             <DiamondDivider testId="contact-divider" className="mt-8" />
             <p className="mx-auto mt-8 max-w-xl text-base font-light leading-relaxed text-ivory/75">
-              Whether it's your first piece or your fifth, we're here to help you find
-              something worth passing down. Reach out and let's talk.
+              Your vision deserves a personal touch. Step in for a consultation or connect with us — we’re here to make every detail feel distinctly yours.
             </p>
           </Reveal>
         </div>
@@ -57,10 +56,9 @@ const Contact = () => {
 
       <section className="mx-auto grid max-w-7xl gap-20 px-6 py-24 md:px-12 lg:grid-cols-[1fr_1.2fr] lg:py-32">
         <Reveal>
-          <h2 className="font-serif text-3xl tracking-tight text-charcoal">The Ashnee Boutique</h2>
+          <h2 className="font-serif text-3xl tracking-tight text-charcoal">Your vision deserves a personal touch.</h2>
           <p className="mt-4 max-w-sm text-base font-light leading-relaxed text-clay">
-            Walk in for a personal consultation, or reach out — every enquiry is
-            answered with the same care we pour into our pieces.
+            Step in for a consultation or connect with us — we’re here to make every detail feel distinctly yours.
           </p>
           <div className="mt-12 space-y-10">
             {INFO.map((item) => (
