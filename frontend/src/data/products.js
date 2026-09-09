@@ -22,9 +22,16 @@ import silverNecklace1 from "@/assets/products/silver-necklace-1.png";
 import silverNecklace2 from "@/assets/products/silver-necklace-2.png";
 import silverNecklace3 from "@/assets/products/silver-necklace-3.png";
 
+import silverNecklace4 from "@/assets/products/silver-necklace-4.png";
+import silverNecklace5 from "@/assets/products/silver-necklace-5.png";
+
 import silverPendant1 from "@/assets/products/silver-pendant-1.png";
 import silverPendant2 from "@/assets/products/silver-pendant-2.png";
 import silverPendant3 from "@/assets/products/silver-pendant-3.png";
+
+import silverPendant4 from "@/assets/products/silver-pendant-4.png";
+import silverPendant5 from "@/assets/products/silver-pendant-5.png";
+import silverPendant6 from "@/assets/products/silver-pendant-6.png";
 
 import silverBroche1 from "@/assets/products/silver-broche-1.png";
 import silverBroche2 from "@/assets/products/silver-broche-2.png";
@@ -52,13 +59,29 @@ import silverEaring4 from "@/assets/products/silver-earing-4.png";
 import silverEaring5 from "@/assets/products/silver-earing-5.png";
 import silverEaring6 from "@/assets/products/silver-earing-6.png";
 
+import silverEaring7 from "@/assets/products/silver-earing-7.png";
+import silverEaring8 from "@/assets/products/silver-earing-8.png";
+import silverEaring9 from "@/assets/products/silver-earing-9.png";
+
 import goldEaring1 from "@/assets/products/gold-earings-1.png";
 import goldEaring2 from "@/assets/products/gold-earings-2.png";
 import goldEaring3 from "@/assets/products/gold-earings-3.png";
 
+import goldEaring4 from "@/assets/products/gold-earing-4.png";
+import goldEaring5 from "@/assets/products/gold-earing-5.png";
+import goldEaring6 from "@/assets/products/gold-earing-6.png";
+
+import goldEaring7 from "@/assets/products/gold-earing-7.png";
+import goldEaring8 from "@/assets/products/gold-earing-8.png";
+import goldEaring9 from "@/assets/products/gold-earing-9.png";
+
 import goldJhumka1 from "@/assets/products/gold-jhumka-1.png";
 import goldJhumka2 from "@/assets/products/gold-jhumka-2.png";
 import goldJhumka3 from "@/assets/products/gold-jhumka-3.png";
+
+import goldJhumka4 from "@/assets/products/gold-jhumka-4.png";
+import goldJhumka5 from "@/assets/products/gold-jhumka-5.png";
+import goldJhumka6 from "@/assets/products/gold-jhumka-6.png";
 
 import goldPendant1 from "@/assets/products/gold-pendant-1.png";
 import goldPendant2 from "@/assets/products/gold-pendant-2.png";
@@ -97,20 +120,24 @@ export const GOLD_PRODUCTS = [
   { id: "Gold Set", name: "Set", price: 96000, category: "Necklaces & Earings", purity: "22K", weight: "28.3 g", stones: "Kundan and pearl cascade", description: "Our signature gold set: a cascading 22K necklace of kundan and pearls, crafted over three weeks at the bench. Made for the big day, kept for generations.", images: [goldSet1, goldSet2, goldSet3] },
   { id: "charm-bracelet", name: "Charm Bracelet", price: 27600, category: "Bracelets", purity: "18K", weight: "6.2 g", stones: "Miniature gold charms", description: "An 18K bracelet hung with miniature charms — a diya, a lotus, an om. Add a charm for every blessing life brings.", images: [goldCharmBracelet1, goldCharmBracelet2, goldCharmBracelet3] },
   { id: "gold bracelet", name: "Bracelet", price: 31800, category: "Bracelets", purity: "18K", weight: "7.4 g", stones: "None — pure goldwork", description: "A supple 18K link bracelet, polished to a soft lustre. Wears beautifully alone or stacked with heirloom bangles.", images: [goldBracelet5, goldBracelet6, goldBracelet7] },
+  { id: "gold-earrings1", name: "Earrings", price: 18700, category: "Earrings", purity: "18K", weight: "3.1 g (pair)", stones: "Micro-set white stones", description: "Featherlight 18K drops that catch the light with every turn of the head — equally at home with a silk sari or a linen shirt.", images: [goldEaring4, goldEaring5, goldEaring6] },
+  { id: "gold-earrings2", name: "Earrings", price: 18700, category: "Earrings", purity: "18K", weight: "3.1 g (pair)", stones: "Micro-set white stones", description: "Featherlight 18K drops that catch the light with every turn of the head — equally at home with a silk sari or a linen shirt.", images: [goldEaring7, goldEaring8, goldEaring9] },
+  { id: "antique-jhumkas1", name: "Antique Jhumkas", price: 29400, category: "Earrings", purity: "22K", weight: "8.9 g (pair)", stones: "Pearl drops", description: "Antique-finish jhumkas with delicate pearl drops that sway as you move. Oxidised recesses give them the depth of a true vintage find.", images: [goldJhumka4, goldJhumka5, goldJhumka6] },
 ];
 
 export const SILVER_PRODUCTS = [
   { id: "silver-ring", name: "Ring", price: 2200, category: "Rings", purity: "92.5 Sterling", weight: "3.0 g", stones: "None — polished band", description: "A clean, high-polish sterling silver band that goes with everything. Substantial feel, effortless look.", images: [silverRing1, silverRing2, silverRing3] },
   { id: "silver-earrings", name: "Earrings", price: 1800, category: "Earrings", purity: "92.5 Sterling", weight: "2.6 g (pair)", stones: "Floral stud detailing", description: "Petite sterling floral studs with hand-burnished petals — an everyday pair with unmistakable craft.", images: [silverEaring1, silverEaring2, silverEaring3] },
   { id: "silver-pendant", name: "Pendant", price: 2000, category: "Pendants", purity: "92.5 Sterling", weight: "2.9 g", stones: "Cubic zirconia halo", description: "A sparkling sterling pendant ringed with a fine halo of stones, on an adjustable 18-inch chain.", images: [silverPendant1, silverPendant2, silverPendant3] },
-  { id: "silver-bracelet", name: "Bracelet", price: 2500, category: "Bracelets", purity: "92.5 Sterling", weight: "6.8 g", stones: "Leaf-link detailing", description: "A botanical sterling bracelet of interlocking leaves, finished with a secure toggle clasp." },
+  { id: "silver-pendant1", name: "Pendant", price: 2000, category: "Pendants", purity: "92.5 Sterling", weight: "2.9 g", stones: "Cubic zirconia halo", description: "A sparkling sterling pendant ringed with a fine halo of stones, on an adjustable 18-inch chain.", images: [silverPendant4, silverPendant5, silverPendant6] },
   { id: "silver ring", name: "Ring", price: 2200, category: "Rings", purity: "92.5 Sterling", weight: "3.0 g", stones: "None — polished band", description: "A clean, high-polish sterling silver band that goes with everything. Substantial feel, effortless look.", images: [silverRing4, silverRing5, silverRing6] },
   { id: "silver-bangles", name: "Bangles", price: 3000, category: "Bangles", purity: "92.5 Sterling", weight: "12.2 g (pair)", stones: "Pearl-accented band", description: "A refined sterling bangle set with a single row of lustrous pearls, secured with a hidden clasp — quietly elegant for both day and evening wear.", images: [silverBangles1, silverBangles2, silverBangles3] }, 
   { id: "silver set", name: "Set", price: 1600, category: "Set", purity: "92.5 Sterling", weight: "6.1 g (pair)", stones: "Oxidised dome work", description: "Boho-heritage silver set with intricate dome work. The pair you will reach for all festive season.", images: [silverSet1, silverSet2, silverSet3] },
   { id: "marcasite-ring", name: "Ring", price: 1900, category: "Rings", purity: "92.5 Sterling", weight: "3.4 g", stones: "Marcasite cluster", description: "A vintage-style sterling ring set with a glittering marcasite cluster — old-world charm, modern fit.", images: [silverRing7, silverRing8, silverRing9] },
   { id: "silver earrings", name: "Earrings", price: 1800, category: "Earrings", purity: "92.5 Sterling", weight: "2.6 g (pair)", stones: "Floral stud detailing", description: "Petite sterling floral studs with hand-burnished petals — an everyday pair with unmistakable craft.", images: [silverEaring4, silverEaring5, silverEaring6] },
   { id: "chain-necklace", name: "Chain Necklace", price: 3400, category: "Necklaces", purity: "92.5 Sterling", weight: "8.6 g", stones: "None — woven chain", description: "A woven sterling chain with a soft, fluid drape. Beautiful bare, perfect with your favourite pendant.", images: [silverNecklace1, silverNecklace2, silverNecklace3] },
-  { id: "cuff-bracelet", name: "Cuff Bracelet", price: 2900, category: "Bracelets", purity: "92.5 Sterling", weight: "9.8 g", stones: "Hammered texture", description: "A hand-hammered sterling cuff with an open fit — one confident gesture of silver." },
+  { id: "chain-necklace1", name: "Chain Necklace", price: 3400, category: "Necklaces", purity: "92.5 Sterling", weight: "8.6 g", stones: "None — woven chain", description: "A woven sterling chain with a soft, fluid drape. Beautiful bare, perfect with your favourite pendant.", images: [silverNecklace4, silverNecklace5] },
+  { id: "silver-earrings1", name: "Earrings", price: 2900, category: "Earrings", purity: "92.5 Sterling", weight: "9.8 g", stones: "Hammered texture", description: "Petite sterling floral studs with hand-burnished petals — an everyday pair with unmistakable craft.", images: [silverEaring7, silverEaring8, silverEaring9] },
   { id: "silver-broche", name: "Broche", price: 2400, category: "Anklets", purity: "92.5 Sterling", weight: "11.0 g (pair)", stones: "Beaded fringe", description: "A traditional pair of sterling payals with a delicate beaded fringe — a blessing for every step.", images: [silverBroche1, silverBroche2] },
 ];
 

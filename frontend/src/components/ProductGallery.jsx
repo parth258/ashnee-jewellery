@@ -1,19 +1,64 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Diamond } from "./Diamond";
 
 export const ProductGallery = ({ images = [], label, testId }) => {
   const [active, setActive] = useState(0);
+  const [hovering, setHovering] = useState(false);
+  const [origin, setOrigin] = useState({ x: 50, y: 50 });
+  const frameRef = useRef(null);
   const hasImages = images && images.length > 0;
   const current = hasImages ? images[active] : null;
 
+  const handleMouseMove = (e) => {
+    const rect = frameRef.current.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    setOrigin({ x, y });
+  };
+
+  const getTouchOrigin = (e) => {
+    const rect = frameRef.current.getBoundingClientRect();
+    const touch = e.touches[0];
+    const x = ((touch.clientX - rect.left) / rect.width) * 100;
+    const y = ((touch.clientY - rect.top) / rect.height) * 100;
+    return { x, y };
+  };
+
+  const handleTouchStart = (e) => {
+    if (hovering) {
+      setHovering(false);
+      return;
+    }
+    setOrigin(getTouchOrigin(e));
+    setHovering(true);
+  };
+
+  const handleTouchMove = (e) => {
+    if (!hovering) return;
+    e.preventDefault();
+    setOrigin(getTouchOrigin(e));
+  };
+
   return (
     <div data-testid={testId}>
-      <div className="group relative aspect-[4/5] overflow-hidden border border-hairline bg-sand shadow-[0_24px_70px_-20px_rgba(150,62,53,0.25)]">
+      <div
+        ref={frameRef}
+        onMouseEnter={() => setHovering(true)}
+        onMouseLeave={() => setHovering(false)}
+        onMouseMove={handleMouseMove}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        className="relative aspect-[4/5] overflow-hidden border border-hairline bg-sand shadow-[0_24px_70px_-20px_rgba(150,62,53,0.25)]"
+      >
         {current ? (
           <img
             src={current}
             alt={label || "Ashnee jewellery"}
-            className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+            style={{
+              transform: hovering ? "scale(2.2)" : "scale(1)",
+              transformOrigin: `${origin.x}% ${origin.y}%`,
+            }}
+            className={`h-full w-full object-cover ${hovering ? "cursor-zoom-out" : "cursor-zoom-in"} transition-transform duration-300 ease-out`}
           />
         ) : (
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[radial-gradient(circle_at_50%_28%,#F6EDE2_0%,#E8DCD0_72%)]">
