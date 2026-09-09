@@ -18,6 +18,14 @@ import silverSet1 from "@/assets/products/silver-set-1.png";
 import silverSet2 from "@/assets/products/silver-set-2.png";
 import silverSet3 from "@/assets/products/silver-set-3.png";
 
+import silverSet4 from "@/assets/products/silver-set-4.jpg";
+import silverSet5 from "@/assets/products/silver-set-5.jpg";
+import silverSet6 from "@/assets/products/silver-set-6.jpg";
+
+import silverSet7 from "@/assets/products/silver-set-7.jpg";
+import silverSet8 from "@/assets/products/silver-set-8.jpg";
+import silverSet9 from "@/assets/products/silver-set-9.jpg";
+
 import silverNecklace1 from "@/assets/products/silver-necklace-1.png";
 import silverNecklace2 from "@/assets/products/silver-necklace-2.png";
 import silverNecklace3 from "@/assets/products/silver-necklace-3.png";
@@ -139,6 +147,8 @@ export const SILVER_PRODUCTS = [
   { id: "chain-necklace1", name: "Chain Necklace", price: 3400, category: "Necklaces", purity: "92.5 Sterling", weight: "8.6 g", stones: "None — woven chain", description: "A woven sterling chain with a soft, fluid drape. Beautiful bare, perfect with your favourite pendant.", images: [silverNecklace4, silverNecklace5] },
   { id: "silver-earrings1", name: "Earrings", price: 2900, category: "Earrings", purity: "92.5 Sterling", weight: "9.8 g", stones: "Hammered texture", description: "Petite sterling floral studs with hand-burnished petals — an everyday pair with unmistakable craft.", images: [silverEaring7, silverEaring8, silverEaring9] },
   { id: "silver-broche", name: "Broche", price: 2400, category: "Anklets", purity: "92.5 Sterling", weight: "11.0 g (pair)", stones: "Beaded fringe", description: "A traditional pair of sterling payals with a delicate beaded fringe — a blessing for every step.", images: [silverBroche1, silverBroche2] },
+  { id: "silver set1", name: "Set", price: 1600, category: "Set", purity: "92.5 Sterling", weight: "6.1 g (pair)", stones: "Oxidised dome work", description: "Boho-heritage silver set with intricate dome work. The pair you will reach for all festive season.", images: [silverSet4, silverSet5, silverSet6] },
+  { id: "silver set2", name: "Set", price: 1600, category: "Set", purity: "92.5 Sterling", weight: "6.1 g (pair)", stones: "Oxidised dome work", description: "Boho-heritage silver set with intricate dome work. The pair you will reach for all festive season.", images: [silverSet7, silverSet8, silverSet9] },
 ];
 
 export const CATEGORIES = ["Rings", "Earrings", "Pendants", "Necklaces", "Bracelets", "Bangles", "Anklets"];
