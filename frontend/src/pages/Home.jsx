@@ -216,7 +216,7 @@ const Home = () => {
           <h2 data-testid="featured-heading" className="mt-6 font-serif text-4xl tracking-tight text-charcoal sm:text-5xl">
             The Signature Edit
           </h2>
-          <p className="mt-4 text-base font-light capitalize tracking-[0.3em] text-clay">Handpicked pieces, blessed beginnings</p>
+          <p className="mt-4 text-base font-light capitalize tracking-[0.1em] text-clay">Handpicked pieces, blessed beginnings</p>
         </Reveal>
 
         <div className="mt-16 grid grid-cols-2 gap-6 lg:grid-cols-4">
