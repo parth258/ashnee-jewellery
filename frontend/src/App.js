@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Lenis from "lenis";
 import { Toaster } from "@/components/ui/sonner";
@@ -12,16 +12,22 @@ import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 const GRAIN =
   "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>";
-const ScrollToTop = () => {
+const ScrollToTop = ({ lenisRef }) => {
   const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo(0, 0);
+    }
   }, [pathname]);
   return null;
 };
 function App() {
+  const lenisRef = useRef(null);
   useEffect(() => {
     const lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+    lenisRef.current = lenis;
     let rafId;
     const loop = (time) => {
       lenis.raf(time);
@@ -31,11 +37,12 @@ function App() {
     return () => {
       cancelAnimationFrame(rafId);
       lenis.destroy();
+      lenisRef.current = null;
     };
   }, []);
   return (
     <BrowserRouter>
-      <ScrollToTop />
+      <ScrollToTop lenisRef={lenisRef} />
       <div className="min-h-screen bg-ivory font-sans text-charcoal antialiased">
         <div
           aria-hidden="true"
@@ -47,8 +54,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/gold-jewellery" element={<CollectionPage key="gold" metal="gold" />} />
           <Route path="/silver-jewellery" element={<CollectionPage key="silver" metal="silver" />} />
-	  <Route path="/product/:id" element={<ProductPage />} />
-    <Route path="/search" element={<SearchPage />} />
+          <Route path="/product/:id" element={<ProductPage />} />
+          <Route path="/search" element={<SearchPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

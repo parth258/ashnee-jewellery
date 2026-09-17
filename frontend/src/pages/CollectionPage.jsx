@@ -125,7 +125,7 @@ const CollectionPage = ({ metal }) => {
             </div>
           </div>
 
-          <div>
+          {/* <div>
             <h4 className="text-[11px] uppercase tracking-[0.25em] text-clay">Metal Purity</h4>
             <div className="mt-5 flex flex-wrap gap-3">
               {cfg.purities.map((p) => (
@@ -145,7 +145,7 @@ const CollectionPage = ({ metal }) => {
                 </label>
               ))}
             </div>
-          </div>
+          </div> */}
         </aside>
 
         <div>

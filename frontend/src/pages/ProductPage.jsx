@@ -69,16 +69,14 @@ const ProductPage = () => {
             {product.description}
           </p>
 
-          <dl className="mt-10 grid grid-cols-2 gap-6 border-t border-hairline pt-8">
+          <dl className="mt-10 space-y-6 border-t border-hairline pt-8">
+            {collectionName !== "Gold Jewellery" && (
+              <div>
+                <dt className="text-[10px] uppercase tracking-[0.3em] text-clay">Purity</dt>
+                <dd data-testid="product-detail-purity" className="mt-2 text-sm text-charcoal">{product.purity}</dd>
+              </div>
+            )}
             <div>
-              <dt className="text-[10px] uppercase tracking-[0.3em] text-clay">Purity</dt>
-              <dd data-testid="product-detail-purity" className="mt-2 text-sm text-charcoal">{product.purity}</dd>
-            </div>
-            <div>
-              <dt className="text-[10px] uppercase tracking-[0.3em] text-clay">Weight</dt>
-              <dd data-testid="product-detail-weight" className="mt-2 text-sm text-charcoal">{product.weight}</dd>
-            </div>
-            <div className="col-span-2">
               <dt className="text-[10px] uppercase tracking-[0.3em] text-clay">Detailing</dt>
               <dd data-testid="product-detail-stones" className="mt-2 text-sm text-charcoal">{product.stones}</dd>
             </div>

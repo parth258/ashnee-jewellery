@@ -114,7 +114,7 @@ export const ProductCard = ({ product, index = 0 }) => {
           <h3 data-testid={`product-name-${product.id}`} className="font-serif text-lg text-charcoal transition-colors duration-300 group-hover:text-maroon group-active:text-maroon">
             {product.name}
           </h3>
-          <p className="mt-1 text-[10px] uppercase tracking-[0.25em] text-clay">{product.purity}</p>
+          {/* <p className="mt-1 text-[10px] uppercase tracking-[0.25em] text-clay">{product.purity}</p> */}
         </div>
       </Link>
     </motion.article>

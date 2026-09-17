@@ -3,12 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { DiamondDivider } from "@/components/Diamond";
 import { Reveal } from "@/components/Reveal";
 import bondOfBlessing from "@/assets/story/bond-of-blessing.jpeg";
-import showcase1 from "@/assets/videos/showcase-1.mp4";
-import showcase2 from "@/assets/videos/showcase-2.mp4";
-import showcase3 from "@/assets/videos/showcase-3.mp4";
-import showcase4 from "@/assets/videos/showcase-4.mp4";
 
-const SHOWCASE_VIDEOS = [showcase1, showcase2, showcase3, showcase4];
 
 const BOND_IMG = bondOfBlessing;
 
@@ -56,7 +51,7 @@ const About = () => (
       </div>
     </section>
 
-    <section data-testid="video-showcase-section" className="bg-sand/60 py-20">
+    {/* <section data-testid="video-showcase-section" className="bg-sand/60 py-20">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
           {SHOWCASE_VIDEOS.map((src, i) => (
@@ -73,7 +68,7 @@ const About = () => (
           ))}
         </div>
       </div>
-    </section>
+    </section> */}
 
     <section className="bg-maroon text-ivory">
       <div className="mx-auto max-w-7xl px-6 py-20 text-center md:px-12 lg:py-28">
