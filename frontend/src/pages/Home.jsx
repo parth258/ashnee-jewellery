@@ -88,10 +88,19 @@ const ShowcaseVideo = ({ src }) => {
     const el = ref.current;
     if (!el) return;
 
+    el.muted = true;
+    el.playsInline = true;
+    el.setAttribute("muted", "");
+    el.setAttribute("playsinline", "");
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          el.play().catch(() => setNeedsTap(true));
+          el.muted = true;
+          const playPromise = el.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(() => setNeedsTap(true));
+          }
         } else {
           el.pause();
         }
@@ -107,6 +116,7 @@ const ShowcaseVideo = ({ src }) => {
     const el = ref.current;
     if (!el) return;
     if (el.paused) {
+      el.muted = true;
       el.play().then(() => setNeedsTap(false)).catch(() => {});
     } else {
       el.pause();
