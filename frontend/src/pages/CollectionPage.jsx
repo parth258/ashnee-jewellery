@@ -5,15 +5,16 @@ import { DiamondDivider } from "@/components/Diamond";
 import { Reveal } from "@/components/Reveal";
 import { ProductCard } from "@/components/ProductCard";
 import { Checkbox } from "@/components/ui/checkbox";
-import { GOLD_PRODUCTS, SILVER_PRODUCTS, CATEGORIES } from "@/data/products";
+import { GOLD_PRODUCTS, SILVER_PRODUCTS, GOLD_CATEGORIES, SILVER_CATEGORIES} from "@/data/products";
 
 const CONFIG = {
   gold: {
     titleMain: "Gold",
     titleAccent: "Jewellery",
     crumb: "Gold Jewellery",
-    desc: "Gold that carries memories from one generation to the next.",
+    desc: "Exquisite gold jewellery crafted to celebrate your most precious moments.",
     products: GOLD_PRODUCTS,
+    categoryOrder: GOLD_CATEGORIES,
     purities: ["18K Gold", "22K Gold"],
     testId: "gold",
   },
@@ -21,8 +22,9 @@ const CONFIG = {
     titleMain: "Silver",
     titleAccent: "Jewellery",
     crumb: "Silver Jewellery",
-    desc: "Silver that becomes part of your everyday story.",
+    desc: "Classic silver designs that add grace to your everyday style.",
     products: SILVER_PRODUCTS,
+    categoryOrder: SILVER_CATEGORIES,
     purities: ["92.5 Sterling"],
     testId: "silver",
   },
@@ -41,8 +43,8 @@ const CollectionPage = ({ metal }) => {
   }, [category, purity]);
 
   const categories = useMemo(() => {
-    const present = new Set(cfg.products.map((p) => p.category));
-    return ["All", ...CATEGORIES.filter((c) => present.has(c))];
+  const present = new Set(cfg.products.map((p) => p.category));
+  return ["All", ...cfg.categoryOrder.filter((c) => present.has(c))];
   }, [cfg]);
 
   const filtered = useMemo(() => {

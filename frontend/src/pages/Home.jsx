@@ -185,7 +185,7 @@ const Home = () => {
           <h2 data-testid="collections-heading" className="mt-6 font-serif text-4xl tracking-tight text-charcoal sm:text-5xl">
             Explore Collection
           </h2>
-          <p className="mt-4 text-base font-light capitalize tracking-[0.3em] text-clay">Made for the moments you'll remember</p>
+          <p className="mt-4 text-base font-light capitalize tracking-[0.1em] text-clay">Made for the moments you'll remember</p>
         </Reveal>
 
         <div className="mt-16 grid gap-10 lg:grid-cols-2">
