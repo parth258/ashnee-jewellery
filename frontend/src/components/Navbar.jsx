@@ -21,7 +21,7 @@ const Navbar = () => {
         <Link to="/" data-testid="brand-logo" className="flex items-center gap-3">
           <img src={logo} alt="Ashnee" className="h-12 w-auto" />
           <span className="leading-tight">
-            <span className="block font-serif text-xl tracking-[0.35em]">ASHNEE</span>
+            <span className="block font-serif text-xl tracking-[0.35em]">AASHNEE</span>
             <span className="mt-0.5 block text-[9px] uppercase tracking-[0.3em] text-ivory/60">
               A Bond of Blessing
             </span>

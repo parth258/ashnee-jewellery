@@ -15,7 +15,7 @@ import showcase6 from "@/assets/videos/showcase-6.mp4";
 import showcase7 from "@/assets/videos/showcase-7.mp4";
 import showcase8 from "@/assets/videos/showcase-8.mp4";
 
-const SHOWCASE_VIDEOS = [showcase1, showcase2, showcase3, showcase4, showcase5, showcase6, showcase7, showcase8];
+const SHOWCASE_VIDEOS = [showcase3, showcase5, showcase8, showcase2, showcase1, showcase6, showcase7, showcase4];
 
 const HERO_IMG = heroBanner;
 const GOLD_IMG =
@@ -185,7 +185,7 @@ const Home = () => {
           <h2 data-testid="collections-heading" className="mt-6 font-serif text-4xl tracking-tight text-charcoal sm:text-5xl">
             Explore Collection
           </h2>
-          <p className="mt-4 text-base font-light capitalize tracking-[0.1em] text-clay">Made for the moments you'll remember</p>
+          <p className="mt-4 text-base font-light capitalize text-clay">Made for the moments you'll remember</p>
         </Reveal>
 
         <div className="mt-16 grid gap-10 lg:grid-cols-2">
@@ -216,7 +216,7 @@ const Home = () => {
           <h2 data-testid="featured-heading" className="mt-6 font-serif text-4xl tracking-tight text-charcoal sm:text-5xl">
             The Signature Edit
           </h2>
-          <p className="mt-4 text-base font-light capitalize tracking-[0.1em] text-clay">Handpicked pieces, blessed beginnings</p>
+          <p className="mt-4 text-base font-light capitalize text-clay">Handpicked pieces, blessed beginnings</p>
         </Reveal>
 
         <div className="mt-16 grid grid-cols-2 gap-6 lg:grid-cols-4">
