@@ -34,7 +34,7 @@ const Footer = () => {
         <Link to="/" className="flex items-center gap-4" data-testid="footer-brand-logo">
           <img src={logo} alt="Ashnee" className="h-20 w-auto" />
           <span className="leading-tight">
-            <span className="block font-serif text-3xl tracking-[0.35em]">ASHNEE</span>
+            <span className="block font-serif text-3xl tracking-[0.35em]">AASHNEE</span>
             <span className="mt-0.5 block text-[9px] uppercase tracking-[0.3em] text-ivory/60">
               A Bond of Blessing
             </span>
@@ -96,7 +96,7 @@ const Footer = () => {
 
       <div className="border-t border-ivory/15">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 py-6 text-xs font-light text-ivory/50 sm:flex-row md:px-12">
-          <span data-testid="footer-copyright">&copy; 2026 Ashnee. All Rights Reserved.</span>
+          <span data-testid="footer-copyright">&copy; 2026 Aashnee. All Rights Reserved.</span>
           <span className="flex items-center gap-2">
             Crafted with blessings <Diamond className="h-2 w-2 text-gold" />
           </span>
