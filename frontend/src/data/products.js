@@ -10,6 +10,22 @@ import goldRing10 from "@/assets/products/gold-ring-10.png";
 import goldRing11 from "@/assets/products/gold-ring-11.png";
 import goldRing12 from "@/assets/products/gold-ring-12.png";
 
+import goldRing13 from "@/assets/products/gold-ring-13.png";
+import goldRing14 from "@/assets/products/gold-ring-14.png";
+import goldRing15 from "@/assets/products/gold-ring-15.png";
+
+import goldRing16 from "@/assets/products/gold-ring-16.png";
+import goldRing17 from "@/assets/products/gold-ring-17.png";
+import goldRing18 from "@/assets/products/gold-ring-18.png";
+
+import goldRing19 from "@/assets/products/gold-ring-19.png";
+import goldRing20 from "@/assets/products/gold-ring-20.png";
+import goldRing21 from "@/assets/products/gold-ring-21.png";
+
+import goldRing22 from "@/assets/products/gold-ring-22.png";
+import goldRing23 from "@/assets/products/gold-ring-23.png";
+import goldRing24 from "@/assets/products/gold-ring-24.png";
+
 import goldRing7 from "@/assets/products/gold-ring-7.png";
 import goldRing8 from "@/assets/products/gold-ring-8.png";
 import goldRing9 from "@/assets/products/gold-ring-9.png";
@@ -51,6 +67,23 @@ import goldNecklace3 from "@/assets/products/gold-necklace-3.png";
 import goldNecklace4 from "@/assets/products/gold-necklace-4.png";
 import goldNecklace5 from "@/assets/products/gold-necklace-5.png";
 import goldNecklace6 from "@/assets/products/gold-necklace-6.png";
+
+import goldNecklace9 from "@/assets/products/gold-necklace-9.png";
+import goldNecklace10 from "@/assets/products/gold-necklace-10.png";
+import goldNecklace11 from "@/assets/products/gold-necklace-11.png";
+import goldNecklace12 from "@/assets/products/gold-necklace-12.png";
+import goldNecklace13 from "@/assets/products/gold-necklace-13.png";
+import goldNecklace14 from "@/assets/products/gold-necklace-14.png";
+import goldNecklace15 from "@/assets/products/gold-necklace-15.png";
+import goldNecklace16 from "@/assets/products/gold-necklace-16.png";
+import goldNecklace17 from "@/assets/products/gold-necklace-17.png";
+import goldNecklace18 from "@/assets/products/gold-necklace-18.png";
+import goldNecklace19 from "@/assets/products/gold-necklace-19.png";
+import goldNecklace20 from "@/assets/products/gold-necklace-20.png";
+import goldNecklace21 from "@/assets/products/gold-necklace-21.png";
+import goldNecklace22 from "@/assets/products/gold-necklace-22.png";
+import goldNecklace23 from "@/assets/products/gold-necklace-23.png";
+import goldNecklace24 from "@/assets/products/gold-necklace-24.png";
 
 import goldRing1 from "@/assets/products/gold-ring-1.png";
 import goldRing2 from "@/assets/products/gold-ring-2.png";
@@ -99,6 +132,13 @@ import goldEaring7 from "@/assets/products/gold-earing-7.png";
 import goldEaring8 from "@/assets/products/gold-earing-8.png";
 import goldEaring9 from "@/assets/products/gold-earing-9.png";
 
+import goldEaring16 from "@/assets/products/gold-earing-16.png";
+
+import goldEaring17 from "@/assets/products/gold-earing-17.png";
+import goldEaring18 from "@/assets/products/gold-earing-18.png";
+import goldEaring19 from "@/assets/products/gold-earing-19.png";
+
+
 import goldEaring10 from "@/assets/products/gold-earing-10.png";
 import goldEaring11 from "@/assets/products/gold-earing-11.png";
 import goldEaring12 from "@/assets/products/gold-earing-12.png";
@@ -127,6 +167,9 @@ import goldBangles1 from "@/assets/products/gold-bangles-1.png";
 import goldBangles2 from "@/assets/products/gold-bangles-2.png";
 import goldBangles3 from "@/assets/products/gold-bangles-3.png";
 
+import goldBangles4 from "@/assets/products/gold-bangle-4.png";
+import goldBangles5 from "@/assets/products/gold-bangle-5.png";
+
 import goldBracelet1 from "@/assets/products/gold-bracelet-1.png";
 
 import goldBracelet5 from "@/assets/products/gold-bracelet-5.png";
@@ -149,26 +192,39 @@ import goldCharmBracelet3 from "@/assets/products/gold-bracelet-4.png";
 
 export const GOLD_PRODUCTS = [
   { id: "gold-ring1", name: "Ring", price: 24500, category: "Rings", purity: "22K", weight: "4.2 g", stones: "Brilliant Cut • Pavé Diamonds • Halo Setting • Elegant Finish", description: "A radiant diamond ring featuring a brilliant central stone surrounded by intricate pavé-set diamonds. Its elegant design and delicate detailing create a timeless statement of luxury", images: [goldRing7, goldRing8, goldRing9] },  
+  { id: "gold-ring6", name: "Ring", price: 24500, category: "Rings", purity: "22K", weight: "4.2 g", stones: "Floral cluster, clear stones, gold-tone setting, petal detailing.", description: "A statement floral ring featuring a cluster of sparkling clear stones set in an intricate gold-toned design. Its bold, flower-inspired silhouette blends delicate detailing with a luxurious, eye-catching appeal.", images: [goldRing19, goldRing20, goldRing21] },
   { id: "gold-ring2", name: "Ring", price: 24500, category: "Rings", purity: "22K", weight: "4.2 g", stones: "Round Diamond • Pavé Setting • Cluster Design • Diamond Band", description: "A dazzling diamond ring featuring a round, pavé-set floral-inspired design that radiates brilliance. Its delicate diamond-encrusted band adds a refined touch of elegance and timeless charm", images: [goldRing11, goldRing10, goldRing12] },    
+  { id: "gold-ring7", name: "Ring", price: 24500, category: "Rings", purity: "22K", weight: "4.2 g", stones: "Floral cluster, clear stones, gold-tone setting, petal detailing.", description: "A statement floral ring featuring a cluster of sparkling clear stones set in an intricate gold-toned design. Its bold, flower-inspired silhouette blends delicate detailing with a luxurious, eye-catching appeal.", images: [goldRing22, goldRing23, goldRing24] },
+  { id: "gold-ring4", name: "Ring", price: 24500, category: "Rings", purity: "22K", weight: "4.2 g", stones: "Floral cluster, clear stones, gold-tone setting, petal detailing.", description: "A statement floral ring featuring a cluster of sparkling clear stones set in an intricate gold-toned design. Its bold, flower-inspired silhouette blends delicate detailing with a luxurious, eye-catching appeal.", images: [goldRing13, goldRing14, goldRing15] },
   { id: "gold-ring", name: "Ring", price: 24500, category: "Rings", purity: "22K", weight: "4.2 g", stones: "Floral cluster, clear stones, gold-tone setting, petal detailing.", description: "A statement floral ring featuring a cluster of sparkling clear stones set in an intricate gold-toned design. Its bold, flower-inspired silhouette blends delicate detailing with a luxurious, eye-catching appeal.", images: [goldRing1, goldRing2, goldRing3] },
   { id: "gold-ring3", name: "Ring", price: 35200, category: "Rings", purity: "18K", weight: "5.6 g", stones: "Emerald-Cut Gemstone, Diamond Halo, Gold Setting", description: "A captivating emerald-green gemstone takes center stage, framed by a delicate halo of sparkling diamonds. Set in warm yellow gold, this elegant ring blends vintage charm with timeless sophistication.", images: [goldRing4, goldRing5, goldRing6] },
+  { id: "gold-ring5", name: "Ring", price: 35200, category: "Rings", purity: "18K", weight: "5.6 g", stones: "Emerald-Cut Gemstone, Diamond Halo, Gold Setting", description: "A captivating emerald-green gemstone takes center stage, framed by a delicate halo of sparkling diamonds. Set in warm yellow gold, this elegant ring blends vintage charm with timeless sophistication.", images: [goldRing16, goldRing17, goldRing18] },
   { id: "gold-pendant", name: "Pendant", price: 21000, category: "Pendants", purity: "22K", weight: "3.8 g", stones: "Emerald Teardrop, Diamond Halo, Gold Setting", description: "A captivating emerald pendant framed with sparkling diamonds and set in elegant gold. Its timeless teardrop design adds a touch of luxury and sophistication to every occasion." , images: [goldPendant1, goldPendant2, goldPendant3] },
   { id: "gold-bangles", name: "Bangles", price: 45000, category: "Bangles", purity: "22K", weight: "16.8 g (pair)", stones: "Diamond Engraved", description: "A stunning gold bracelet adorned with sparkling diamonds, showcasing exquisite craftsmanship and timeless elegance. Its delicate design adds a touch of luxury and sophistication, perfect for elevating any traditional or modern look.", images: [goldBangles1, goldBangles2, goldBangles3] } ,
+  { id: "gold-bangles1", name: "Bangles", price: 45000, category: "Bangles", purity: "22K", weight: "16.8 g (pair)", stones: "Diamond Engraved", description: "A stunning gold bracelet adorned with sparkling diamonds, showcasing exquisite craftsmanship and timeless elegance. Its delicate design adds a touch of luxury and sophistication, perfect for elevating any traditional or modern look.", images: [goldBangles4] } ,
+  { id: "gold-bangles2", name: "Bangles", price: 45000, category: "Bangles", purity: "22K", weight: "16.8 g (pair)", stones: "Diamond Engraved", description: "A stunning gold bracelet adorned with sparkling diamonds, showcasing exquisite craftsmanship and timeless elegance. Its delicate design adds a touch of luxury and sophistication, perfect for elevating any traditional or modern look.", images: [goldBangles5] } ,
   { id: "gold-bracelet", name: "Bracelet", price: 31800, category: "Bracelets", purity: "18K", weight: "7.4 g", stones: "None — pure goldwork", description: "A delicate gold bracelet featuring a sparkling rectangular centerpiece, complemented by intricate diamond detailing. Paired with elegant diamond stud earrings, it creates a refined, luxurious look that beautifully enhances traditional attire.", images: [goldBracelet1] },
   { id: "charm-bracelet", name: "Bracelet", price: 27600, category: "Bracelets", purity: "18K", weight: "6.2 g", stones: "Gold setting, round-cut clear stones, delicate links.", description: "A delicate gold bracelet featuring a continuous row of sparkling, round-cut clear stones set in an elegant design. Its timeless, minimalist style adds a touch of brilliance and sophistication, perfect for everyday wear or special occasions.", images: [goldCharmBracelet1, goldCharmBracelet2, goldCharmBracelet3] },
   { id: "gold bracelet", name: "Bracelet", price: 31800, category: "Bracelets", purity: "18K", weight: "7.4 g", stones: "Floral motifs, geometric patterns, diamond embellishments, openwork design.", description: "A luxurious gold bracelet featuring an intricate floral and geometric pattern, embellished with sparkling clear stones. Its elegant openwork design blends traditional craftsmanship with a refined, contemporary appeal.", images: [goldBracelet5, goldBracelet6, goldBracelet7] },
+  { id: "gold-earrings5", name: "Tops", price: 18700, category: "Earrings", purity: "18K", weight: "3.1 g (pair)", stones: "Heart-Cut Rubies • Diamond Halo • Gold Setting • Romantic Elegance", description: "These elegant heart-shaped stud earrings feature vibrant ruby-red gemstones framed by a sparkling diamond halo. Their romantic design and radiant gold setting add a touch of glamour to any occasion.", images: [goldEaring16] },
   { id: "gold-earrings3", name: "Earrings", price: 18700, category: "Earrings", purity: "18K", weight: "3.1 g (pair)", stones: "Heart-Cut Rubies • Diamond Halo • Gold Setting • Romantic Elegance", description: "These elegant heart-shaped stud earrings feature vibrant ruby-red gemstones framed by a sparkling diamond halo. Their romantic design and radiant gold setting add a touch of glamour to any occasion.", images: [goldEaring10, goldEaring11, goldEaring12] },
   { id: "gold-earrings1", name: "Earrings", price: 18700, category: "Earrings", purity: "18K", weight: "3.1 g (pair)", stones: "Heart Motif • Diamond Studded • Circular Design • Matching Set", description: "A dazzling diamond jewellery set featuring a contemporary circular design with a delicate heart-shaped centre. The matching earrings add a touch of modern elegance and sparkle to any occasion.", images: [goldEaring6, goldEaring5, goldEaring4] },
   { id: "gold-earrings4", name: "Earrings", price: 18700, category: "Earrings", purity: "18K", weight: "3.1 g (pair)", stones: "Geometric Diamond Chain Dangles", description: "Elegant diamond-studded dangler earrings featuring geometric motifs and delicate cascading chains. The sparkling white stones create a graceful, contemporary look with refined sophistication.", images: [goldEaring15, goldEaring13, goldEaring14] },
+  { id: "gold-earrings6", name: "Earrings", price: 18700, category: "Earrings", purity: "18K", weight: "3.1 g (pair)", stones: "Geometric Diamond Chain Dangles", description: "Elegant diamond-studded dangler earrings featuring geometric motifs and delicate cascading chains. The sparkling white stones create a graceful, contemporary look with refined sophistication.", images: [goldEaring17, goldEaring18, goldEaring19] },
   { id: "gold-earrings2", name: "Earrings", price: 18700, category: "Earrings", purity: "18K", weight: "3.1 g (pair)", stones: "Floral Filigree • Ruby Accents • Diamond Embellishments • Gold Finish", description: "These exquisite gold earrings feature intricate floral filigree, sparkling diamond accents, and rich ruby-red centre stones. Their elegant dangling design adds a regal charm, perfect for festive and traditional occasions", images: [goldEaring7, goldEaring8, goldEaring9] },
   { id: "gold-earrings", name: "Earrings", price: 18700, category: "Earrings", purity: "18K", weight: "3.1 g (pair)", stones: "Floral motifs, geometric patterns, dangling stone drops, intricate stonework", description: "These exquisite chandelier earrings feature an intricate gold-toned design adorned with sparkling clear stones and elegant dangling elements.Their ornate detailing and graceful movement create a luxurious statement, perfect for weddings and special occasions.", images: [goldEaring1, goldEaring2, goldEaring3] },
   { id: "gold-pendant1", name: "Necklace", price: 21000, category: "Pendants", purity: "22K", weight: "3.8 g", stones: "Emerald-Cut Motif, Teardrop Design, Diamond Accents, Elegant Finish", description: "A graceful diamond-studded jewellery set featuring elegant teardrop-shaped pendants and matching earrings. The intricate detailing and sparkling finish create a timeless, luxurious look." , images: [goldPendant5, goldPendant6, goldPendant4] },
   { id: "gold-necklace1", name: "Necklace", price: 42500, category: "Necklaces", purity: "22K", weight: "11.6 g", stones: "Ruby Drops • Diamond Halo • Floral Motifs • Elegant Finish", description: "A stunning ruby and diamond jewellery set featuring elegant teardrop pendants and delicate floral accents. The rich red gemstones paired with sparkling diamonds create a timeless, luxurious look.", images: [goldNecklace4, goldNecklace5, goldNecklace6] },
+  { id: "Gold Set3", name: "Necklace", price: 96000, category: "Necklaces", purity: "22K", weight: "28.3 g", stones: "Floral Motif • Pear-Cut Diamonds • Gold Accents • Intricate Craftsmanship", description: "A stunning diamond jewellery set featuring an intricate floral-inspired design with elegant gold detailing and sparkling pear-cut diamonds. The matching necklace, earrings, and ring create a luxurious, graceful look perfect for special occasions.", images: [goldNecklace9] },
   { id: "Gold Set", name: "Necklace", price: 96000, category: "Necklaces", purity: "22K", weight: "28.3 g", stones: "Intricate Filigree • Emerald Teardrops • Diamond Accents • Royal Elegance", description: "An exquisite diamond necklace and matching earrings featuring intricate filigree craftsmanship and elegant emerald-green teardrop gemstones. The coordinated set radiates timeless royal elegance with a delicate, luxurious sparkle.", images: [goldSet1, goldSet2, goldSet3] },
+   { id: "gold-necklace2", name: "Necklace", price: 42500, category: "Necklaces", purity: "22K", weight: "11.6 g", stones: "Floral Diamond Ruby Elegance", description: "A graceful diamond-studded necklace featuring an intricate floral vine design, paired with matching dangling earrings. Deep ruby-red accents and delicate white stones create an elegant, regal look.", images: [goldNecklace10, goldNecklace11, goldNecklace12] },
   { id: "Gold Set1", name: "Necklace", price: 96000, category: "Necklaces", purity: "22K", weight: "28.3 g", stones: "Floral Motif • Pear-Cut Diamonds • Gold Accents • Intricate Craftsmanship", description: "A stunning diamond jewellery set featuring an intricate floral-inspired design with elegant gold detailing and sparkling pear-cut diamonds. The matching necklace, earrings, and ring create a luxurious, graceful look perfect for special occasions.", images: [goldSet5, goldSet4, goldSet6] },
+  { id: "gold-necklace3", name: "Necklace", price: 42500, category: "Necklaces", purity: "22K", weight: "11.6 g", stones: "Floral Diamond Ruby Elegance", description: "A graceful diamond-studded necklace featuring an intricate floral vine design, paired with matching dangling earrings. Deep ruby-red accents and delicate white stones create an elegant, regal look.", images: [goldNecklace13, goldNecklace14, goldNecklace15] },
   { id: "Gold Set2", name: "Necklace", price: 96000, category: "Necklaces", purity: "22K", weight: "28.3 g", stones: "Floral Diamond Motifs, Teardrop Accents, Intricate Goldwork", description: "A delicate diamond necklace adorned with floral-inspired motifs and a graceful teardrop pendant. Matching earrings and a statement ring complete this elegant, nature-inspired jewellery set.", images: [goldSet9, goldSet8, goldSet7] },
   { id: "gold-necklace", name: "Necklace", price: 42500, category: "Necklaces", purity: "22K", weight: "11.6 g", stones: "Floral Diamond Ruby Elegance", description: "A graceful diamond-studded necklace featuring an intricate floral vine design, paired with matching dangling earrings. Deep ruby-red accents and delicate white stones create an elegant, regal look.", images: [goldNecklace2, goldNecklace1, goldNecklace3] },
   { id: "gold-pendant2", name: "Necklace", price: 21000, category: "Pendants", purity: "22K", weight: "3.8 g", stones: "Diamond Embellishments • Teardrop Motifs • Intricate Craftsmanship • Matching Set", description: "A stunning diamond necklace set featuring an intricate multi-layered design with delicate teardrop motifs. Paired with matching chandelier earrings, it adds timeless elegance and sparkling sophistication to any occasion." , images: [goldPendant9, goldPendant8, goldPendant7] },  
+  { id: "gold-necklace4", name: "Necklace", price: 42500, category: "Necklaces", purity: "22K", weight: "11.6 g", stones: "Emerald Accents • Diamond Embellishments • Gold Filigree • Pearl-Like Drops", description: "A regal diamond choker adorned with rich emerald-green accents and intricate gold detailing. Paired with matching statement earrings, this set exudes traditional elegance with a luxurious finish.", images: [goldNecklace16, goldNecklace17, goldNecklace18] },
+  { id: "gold-necklace5", name: "Necklace", price: 42500, category: "Necklaces", purity: "22K", weight: "11.6 g", stones: "Emerald Accents • Diamond Embellishments • Gold Filigree • Pearl-Like Drops", description: "A regal diamond choker adorned with rich emerald-green accents and intricate gold detailing. Paired with matching statement earrings, this set exudes traditional elegance with a luxurious finish.", images: [goldNecklace19, goldNecklace20, goldNecklace21, goldNecklace22, goldNecklace23, goldNecklace24] },
   { id: "gold-necklace2", name: "Necklace", price: 42500, category: "Necklaces", purity: "22K", weight: "11.6 g", stones: "Emerald Accents • Diamond Embellishments • Gold Filigree • Pearl-Like Drops", description: "A regal diamond choker adorned with rich emerald-green accents and intricate gold detailing. Paired with matching statement earrings, this set exudes traditional elegance with a luxurious finish.", images: [goldNecklace7, goldNecklace8] },
   { id: "Mangal Sutra", name: "Mangal Sutra", price: 68900, category: "Mangal Sutra", purity: "22K", weight: "19.5 g", stones: "Black Beads, Diamond Drops, Gold Accents", description: "A delicate mangalsutra featuring a sleek black-bead chain and a sparkling diamond-accented gold pendant. Its graceful design blends traditional elegance with a modern, everyday appeal.", images: [goldMangalSutra1, goldMangalSutra2] },
 ];
