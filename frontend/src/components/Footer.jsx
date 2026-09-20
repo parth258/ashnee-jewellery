@@ -32,7 +32,7 @@ const Footer = () => {
       <div className="mx-auto flex max-w-7xl flex-col gap-14 px-6 py-20 md:flex-row md:items-start md:justify-between md:px-12">
       <div className="max-w-sm">
         <Link to="/" className="flex items-center gap-4" data-testid="footer-brand-logo">
-          <img src={logo} alt="Ashnee" className="h-20 w-auto" />
+          <img src={logo} alt="Aashnee" className="h-20 w-auto" />
           <span className="leading-tight">
             <span className="block font-serif text-3xl tracking-[0.35em]">AASHNEE</span>
             <span className="mt-0.5 block text-[9px] uppercase tracking-[0.3em] text-ivory/60">
