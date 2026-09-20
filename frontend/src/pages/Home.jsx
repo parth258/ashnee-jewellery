@@ -14,14 +14,14 @@ import showcase5 from "@/assets/videos/showcase-5.mp4";
 import showcase6 from "@/assets/videos/showcase-6.mp4";
 import showcase7 from "@/assets/videos/showcase-7.mp4";
 import showcase8 from "@/assets/videos/showcase-8.mp4";
+import goldCollection from "@/assets/collection/gold-collection.png";
+import silverCollection from "@/assets/collection/silver-collection.jpeg";
 
 const SHOWCASE_VIDEOS = [showcase3, showcase5, showcase8, showcase2, showcase1, showcase6, showcase7, showcase4];
 
 const HERO_IMG = heroBanner;
-const GOLD_IMG =
-  "https://images.unsplash.com/photo-1688382654723-a7366006519b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwyfHxnb2xkJTIwamV3ZWxyeSUyMG1vZGVsJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzg2MzY0NTIyfDA&ixlib=rb-4.1.0&q=85";
-const SILVER_IMG =
-  "https://images.unsplash.com/photo-1589128777073-263566ae5e4d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzR8MHwxfHNlYXJjaHwxfHxzaWx2ZXIlMjBkaWFtb25kJTIwbmVja2xhY2UlMjBtYWNyb3xlbnwwfHx8fDE3ODYzNjQ1MzN8MA&ixlib=rb-4.1.0&q=85";
+const GOLD_IMG = goldCollection;
+const SILVER_IMG = silverCollection;
 const BOND_IMG = bondOfBlessing;
 
 const MARQUEE_WORDS = [
