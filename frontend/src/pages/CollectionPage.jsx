@@ -1,6 +1,6 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ChevronRight, SlidersHorizontal, ArrowDown, RotateCcw } from "lucide-react";
+import { ChevronRight, SlidersHorizontal, RotateCcw } from "lucide-react";
 import { DiamondDivider } from "@/components/Diamond";
 import { Reveal } from "@/components/Reveal";
 import { ProductCard } from "@/components/ProductCard";
@@ -31,16 +31,29 @@ const CONFIG = {
 };
 
 const PAGE_SIZE = 6;
+const collectionState = new Map();
 
 const CollectionPage = ({ metal }) => {
   const cfg = CONFIG[metal];
-  const [category, setCategory] = useState("All");
-  const [purity, setPurity] = useState([]);
-  const [visible, setVisible] = useState(PAGE_SIZE);
+  const saved = collectionState.get(metal);
+  const [category, setCategory] = useState(saved?.category || "All");
+  const [purity, setPurity] = useState(saved?.purity || []);
+  const [visible, setVisible] = useState(saved?.visible || PAGE_SIZE);
+  const prevFiltersRef = useRef({ category: saved?.category || "All", purity: saved?.purity || [] });
+  const loadMoreRef = useRef(null);
 
   useEffect(() => {
-    setVisible(PAGE_SIZE);
-  }, [category, purity]);
+    collectionState.set(metal, { category, purity, visible });
+  }, [metal, category, purity, visible]);
+
+    useEffect(() => {
+      const prev = prevFiltersRef.current;
+      const changed = prev.category !== category || JSON.stringify(prev.purity) !== JSON.stringify(purity);
+      if (changed) {
+        setVisible(PAGE_SIZE);
+      }
+      prevFiltersRef.current = { category, purity };
+    }, [category, purity]);
 
   const categories = useMemo(() => {
   const present = new Set(cfg.products.map((p) => p.category));
@@ -56,6 +69,28 @@ const CollectionPage = ({ metal }) => {
   }, [cfg, category, purity]);
 
   const shown = filtered.slice(0, visible);
+
+  console.log("COLLECTION DEBUG:", JSON.stringify({ metal, savedVisible: saved?.visible, visible, category, filteredLength: filtered.length }));
+
+useEffect(() => {
+  const checkLoadMore = () => {
+    if (visible >= filtered.length) return;
+    const scrollBottom = window.scrollY + window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+    if (scrollBottom >= docHeight - 600) {
+      setVisible((v) => Math.min(v + PAGE_SIZE, filtered.length));
+    }
+  };
+
+  const timer = setTimeout(() => {
+    window.addEventListener("scroll", checkLoadMore, { passive: true });
+  }, 500);
+
+  return () => {
+    clearTimeout(timer);
+    window.removeEventListener("scroll", checkLoadMore);
+  };
+  }, [visible, filtered.length]);
 
   const togglePurity = (value) =>
     setPurity((prev) => (prev.includes(value) ? prev.filter((p) => p !== value) : [...prev, value]));
@@ -172,14 +207,8 @@ const CollectionPage = ({ metal }) => {
           )}
 
           {visible < filtered.length && (
-            <div className="mt-16 text-center">
-              <button
-                data-testid="load-more-button"
-                onClick={() => setVisible((v) => v + PAGE_SIZE)}
-                className="inline-flex items-center gap-3 border border-maroon px-9 py-4 text-[11px] uppercase tracking-[0.25em] text-maroon transition-colors duration-300 hover:bg-maroon hover:text-ivory"
-              >
-                Load More <ArrowDown className="h-3.5 w-3.5" strokeWidth={1.5} />
-              </button>
+            <div ref={loadMoreRef} className="mt-16 flex justify-center py-8" data-testid="load-more-sentinel">
+              <span className="text-[11px] uppercase tracking-[0.25em] text-clay/60">Loading more…</span>
             </div>
           )}
         </div>

@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { ChevronRight, ArrowLeft, ArrowRight, Gem, HandHeart, ShieldCheck, Truck } from "lucide-react";
 import { DiamondDivider, Diamond } from "@/components/Diamond";
 import { Reveal } from "@/components/Reveal";
@@ -33,6 +33,16 @@ const ProductPage = () => {
       </main>
     );
   }
+
+const navigate = useNavigate();
+
+const handleBack = () => {
+  if (window.history.state && window.history.state.idx > 0) {
+    navigate(-1);
+  } else {
+    navigate(collectionPath);
+  }
+};
 
   const collectionPath = product.purity.includes("Sterling") ? "/silver-jewellery" : "/gold-jewellery";
   const collectionName = product.purity.includes("Sterling") ? "Silver Jewellery" : "Gold Jewellery";
@@ -90,13 +100,14 @@ const ProductPage = () => {
             >
               Enquire About This Piece <ArrowRight className="h-3.5 w-3.5" strokeWidth={1.5} />
             </Link>
-            <Link
-              to={collectionPath}
-              data-testid="product-back-link"
-              className="inline-flex items-center gap-3 border border-maroon px-9 py-4 text-[11px] uppercase tracking-[0.25em] text-maroon transition-colors duration-300 hover:bg-maroon hover:text-ivory"
-            >
+            <button
+                type="button"
+                onClick={handleBack}
+                data-testid="product-back-link"
+                className="inline-flex items-center gap-3 border border-maroon px-9 py-4 text-[11px] uppercase tracking-[0.25em] text-maroon transition-colors duration-300 hover:bg-maroon hover:text-ivory"
+             >
               <ArrowLeft className="h-3.5 w-3.5" strokeWidth={1.5} /> Back to {collectionName}
-            </Link>
+            </button>
           </div>
 
           {/* <ul className="mt-12 grid grid-cols-2 gap-5">
