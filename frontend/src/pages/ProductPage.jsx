@@ -95,7 +95,7 @@ const handleBack = () => {
           <div className="mt-12 flex flex-wrap gap-5">
             <Link
               to="/contact"
-              state={{ productName: product.name }}
+              state={{ productName: product.name, productImage: product.images?.[0] || "" }}
               data-testid="product-enquire-button"  
               className="inline-flex items-center gap-3 bg-maroon px-9 py-4 text-[11px] uppercase tracking-[0.25em] text-ivory transition-colors duration-300 hover:bg-maroon-dark"
             >

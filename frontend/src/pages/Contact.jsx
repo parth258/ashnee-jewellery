@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { toast } from "sonner";
-import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, ArrowRight, X } from "lucide-react";
 import { DiamondDivider } from "@/components/Diamond";
 import { Reveal } from "@/components/Reveal";
 
@@ -15,28 +15,46 @@ const INFO = [
   { icon: Clock, title: "Working Hours", lines: ["Monday – Saturday", "10:00 AM – 8:00 PM IST"], testId: "contact-info-hours" },
 ];
 
-
-
 const inputCls =
   "w-full border-b border-hairline bg-transparent py-3 text-base font-light text-charcoal placeholder:text-clay/50 transition-colors duration-300 focus:border-maroon focus:outline-none";
 
 const Contact = () => {
   const location = useLocation();
-const prefillMessage = location.state?.productName
-  ? `I'm interested in: ${location.state.productName}`
-  : "";
-  const [form, setForm] = useState({ name: "", email: "", phone: "", message: prefillMessage });
+  const initialProductName = location.state?.productName || "";
+  const initialProductImage = location.state?.productImage || "";
+  const prefillMessage = initialProductName ? `I'm interested in: ${initialProductName}` : "";
+
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: prefillMessage,
+    productName: initialProductName,
+    productImage: initialProductImage,
+  });
   const [loading, setLoading] = useState(false);
 
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
+
+  const clearProduct = () => {
+    setForm((f) => ({ ...f, productName: "", productImage: "" }));
+  };
 
   const submit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post(`${API}/contact`, form);
+      const payload = {
+        ...form,
+        // Convert the bundler's relative asset path into a full URL the
+        // email client can actually load.
+        productImage: form.productImage
+          ? `${window.location.origin}${form.productImage}`
+          : "",
+      };
+      const res = await axios.post(`${API}/contact`, payload);
       toast.success(res.data.message);
-      setForm({ name: "", email: "", phone: "", message: "" });
+      setForm({ name: "", email: "", phone: "", message: "", productName: "", productImage: "" });
     } catch (err) {
       toast.error(err?.response?.data?.detail || "Could not send your message right now.");
     } finally {
@@ -49,7 +67,6 @@ const prefillMessage = location.state?.productName
       <section className="bg-maroon text-ivory">
         <div className="mx-auto max-w-7xl px-6 py-20 text-center md:px-12 lg:py-28">
           <Reveal>
-            {/* <p data-testid="contact-eyebrow" className="text-[11px] uppercase tracking-[0.4em] text-gold"></p> */}
             <h1 data-testid="contact-title" className="mx-auto mt-6 max-w-3xl font-serif text-4xl leading-tight tracking-tight sm:text-5xl lg:text-6xl">
               Contact <span className="italic text-gold">Us</span>
             </h1>
@@ -87,6 +104,35 @@ const prefillMessage = location.state?.productName
         <Reveal delay={0.15}>
           <form onSubmit={submit} data-testid="contact-form" className="border border-hairline bg-sand/40 p-8 sm:p-12">
             <h2 className="font-serif text-2xl tracking-tight text-charcoal">Send an Enquiry</h2>
+
+            {form.productName && (
+              <div
+                data-testid="contact-product-chip"
+                className="mt-6 flex items-center gap-4 border border-maroon/30 bg-ivory px-4 py-3"
+              >
+                {form.productImage && (
+                  <img
+                    src={form.productImage}
+                    alt={form.productName}
+                    className="h-14 w-14 shrink-0 object-cover"
+                  />
+                )}
+                <div className="flex-1">
+                  <p className="text-[10px] uppercase tracking-[0.25em] text-clay">Enquiring about</p>
+                  <p className="text-sm text-charcoal">{form.productName}</p>
+                </div>
+                <button
+                  type="button"
+                  onClick={clearProduct}
+                  data-testid="contact-product-chip-clear"
+                  aria-label="Remove product from enquiry"
+                  className="shrink-0 text-clay transition-colors duration-300 hover:text-maroon"
+                >
+                  <X className="h-4 w-4" strokeWidth={1.5} />
+                </button>
+              </div>
+            )}
+
             <div className="mt-10 grid gap-8 sm:grid-cols-2">
               <div>
                 <label htmlFor="contact-name" className="text-[10px] uppercase tracking-[0.3em] text-clay">Full Name</label>

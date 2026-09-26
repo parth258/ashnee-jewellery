@@ -7,8 +7,10 @@ import os
 import asyncio
 import html as html_lib
 import logging
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 from pathlib import Path
-import resend
 from pydantic import BaseModel, Field, ConfigDict
 from typing import List
 import uuid
@@ -16,8 +18,7 @@ from datetime import datetime, timezone
 
 
 ROOT_DIR = Path(__file__).parent
-load_dotenv(ROOT_DIR / '.env')
-
+load_dotenv(ROOT_DIR / '.env', override=True)
 mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url, tlsCAFile=certifi.where())
 db = client[os.environ['DB_NAME']]
@@ -25,20 +26,30 @@ db = client[os.environ['DB_NAME']]
 app = FastAPI()
 api_router = APIRouter(prefix="/api")
 
-RESEND_API_KEY = os.environ.get('RESEND_API_KEY', '')
-SENDER_EMAIL = os.environ.get('SENDER_EMAIL', 'onboarding@resend.dev')
-ALERT_EMAIL = os.environ.get('ALERT_EMAIL', '')
-resend.api_key = RESEND_API_KEY
+SMTP_HOST = os.environ.get('SMTP_HOST', 'smtp.hostinger.com')
+SMTP_PORT = int(os.environ.get('SMTP_PORT', '465'))
+SMTP_USER = os.environ.get('SMTP_USER', '')
+SMTP_PASSWORD = os.environ.get('SMTP_PASSWORD', '')
+SENDER_EMAIL = os.environ.get('SENDER_EMAIL', SMTP_USER)
+ALERT_EMAIL = os.environ.get('ALERT_EMAIL', SMTP_USER)
 
 logger = logging.getLogger("ashnee")
 
 
-def _alert_html(title: str, rows: list) -> str:
+def _alert_html(title: str, rows: list, image_url: str = "") -> str:
     rows_html = "".join(
         f'<tr><td style="padding:10px 16px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#963E35;border-bottom:1px solid #E8DCD0;">{k}</td>'
         f'<td style="padding:10px 16px;font-size:14px;color:#2A1F1D;border-bottom:1px solid #E8DCD0;">{v}</td></tr>'
         for k, v in rows
     )
+    image_html = ""
+    if image_url:
+        image_html = (
+            '<tr><td style="padding:28px 32px 0;">'
+            f'<img src="{html_lib.escape(image_url)}" alt="Product" width="180" '
+            'style="display:block;width:180px;height:auto;border:1px solid #DBCDC0;" />'
+            '</td></tr>'
+        )
     return (
         '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F6EDE2;padding:32px 0;">'
         '<tr><td align="center">'
@@ -48,6 +59,7 @@ def _alert_html(title: str, rows: list) -> str:
         '<div style="font-size:9px;letter-spacing:3px;color:#D4AF37;text-transform:uppercase;margin-top:4px;">A Bond of Blessing</div>'
         '</td></tr>'
         f'<tr><td style="padding:28px 32px 8px;"><div style="font-family:Georgia,serif;font-size:22px;color:#2A1F1D;">{title}</div></td></tr>'
+        f'{image_html}'
         '<tr><td style="padding:12px 32px 32px;">'
         f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #DBCDC0;">{rows_html}</table>'
         '</td></tr>'
@@ -56,17 +68,26 @@ def _alert_html(title: str, rows: list) -> str:
     )
 
 
-def fire_alert(subject: str, html: str):
-    if not RESEND_API_KEY or not ALERT_EMAIL:
-        logger.warning("Email alert skipped: RESEND_API_KEY or ALERT_EMAIL not configured")
+def fire_alert(subject: str, html: str, reply_to: str = ""):
+    if not SMTP_USER or not SMTP_PASSWORD or not ALERT_EMAIL:
+        logger.warning("Email alert skipped: SMTP_USER, SMTP_PASSWORD, or ALERT_EMAIL not configured")
         return
+
+    def _send():
+        msg = MIMEMultipart("alternative")
+        msg["Subject"] = subject
+        msg["From"] = SENDER_EMAIL
+        msg["To"] = ALERT_EMAIL
+        if reply_to:
+            msg["Reply-To"] = reply_to
+        msg.attach(MIMEText(html, "html"))
+        with smtplib.SMTP_SSL(SMTP_HOST, SMTP_PORT) as server:
+            server.login(SMTP_USER, SMTP_PASSWORD)
+            server.sendmail(SENDER_EMAIL, [ALERT_EMAIL], msg.as_string())
 
     async def _task():
         try:
-            await asyncio.to_thread(
-                resend.Emails.send,
-                {"from": SENDER_EMAIL, "to": [ALERT_EMAIL], "subject": subject, "html": html},
-            )
+            await asyncio.to_thread(_send)
             logger.info(f"Alert email sent: {subject}")
         except Exception as e:
             logger.error(f"Failed to send alert email: {e}")
@@ -100,6 +121,8 @@ class ContactMessage(BaseModel):
     email: str
     phone: str = ""
     message: str
+    productName: str = ""
+    productImage: str = ""
     sent_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 class ContactCreate(BaseModel):
@@ -107,6 +130,8 @@ class ContactCreate(BaseModel):
     email: str = Field(min_length=3, max_length=320)
     phone: str = Field(default="", max_length=30)
     message: str = Field(min_length=1, max_length=4000)
+    productName: str = Field(default="", max_length=200)
+    productImage: str = Field(default="", max_length=2000)
 
 
 @api_router.get("/")
@@ -163,17 +188,20 @@ async def send_contact(input: ContactCreate):
     doc = msg.model_dump()
     doc['sent_at'] = doc['sent_at'].isoformat()
     await db.contact_messages.insert_one(doc)
+
+    rows = [
+        ("Name", html_lib.escape(msg.name)),
+        ("Email", html_lib.escape(msg.email)),
+        ("Phone", html_lib.escape(msg.phone) or "—"),
+    ]
+    if msg.productName:
+        rows.append(("Product", html_lib.escape(msg.productName)))
+    rows.append(("Message", html_lib.escape(msg.message)))
+
     fire_alert(
         f"New Ashnee Enquiry from {msg.name}",
-        _alert_html(
-            "New Contact Enquiry",
-            [
-                ("Name", html_lib.escape(msg.name)),
-                ("Email", html_lib.escape(msg.email)),
-                ("Phone", html_lib.escape(msg.phone) or "—"),
-                ("Message", html_lib.escape(msg.message)),
-            ],
-        ),
+        _alert_html("New Contact Enquiry", rows, image_url=msg.productImage),
+        reply_to=msg.email,
     )
     return {"message": "Thank you for writing to us. We will respond within 24 hours."}
 
