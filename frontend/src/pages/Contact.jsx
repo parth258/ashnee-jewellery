@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { toast } from "sonner";
 import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
@@ -14,11 +15,17 @@ const INFO = [
   { icon: Clock, title: "Working Hours", lines: ["Monday – Saturday", "10:00 AM – 8:00 PM IST"], testId: "contact-info-hours" },
 ];
 
+
+
 const inputCls =
   "w-full border-b border-hairline bg-transparent py-3 text-base font-light text-charcoal placeholder:text-clay/50 transition-colors duration-300 focus:border-maroon focus:outline-none";
 
 const Contact = () => {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+  const location = useLocation();
+const prefillMessage = location.state?.productName
+  ? `I'm interested in: ${location.state.productName}`
+  : "";
+  const [form, setForm] = useState({ name: "", email: "", phone: "", message: prefillMessage });
   const [loading, setLoading] = useState(false);
 
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
