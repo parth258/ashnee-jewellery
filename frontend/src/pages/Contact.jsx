@@ -9,9 +9,9 @@ import { Reveal } from "@/components/Reveal";
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 const INFO = [
-  { icon: MapPin, title: "Visit Us At", lines: ["Ashnee Jewels, Gopal Ji Ka Rasta", "Chora Rasta, Jaipur 302002"], testId: "contact-info-visit" },
+  { icon: MapPin, title: "Visit Us At", lines: ["Aashnee Jewels, Gopal Ji Ka Rasta", "Chora Rasta, Jaipur 302002"], testId: "contact-info-visit" },
   { icon: Phone, title: "Call Us", lines: ["+91 98280 72412"], testId: "contact-info-call" },
-  { icon: Mail, title: "Write to Us", lines: ["hello@ashnee.in", "care@ashnee.in"], testId: "contact-info-write" },
+  { icon: Mail, title: "Write to Us", lines: ["care@care.aashnee.in"], testId: "contact-info-write" },
   { icon: Clock, title: "Working Hours", lines: ["Monday – Saturday", "10:00 AM – 8:00 PM IST"], testId: "contact-info-hours" },
 ];
 
