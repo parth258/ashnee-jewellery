@@ -44,12 +44,12 @@ const Footer = () => {
           Jewellery that becomes a part of your moments, your memories, and your story.
         </p>
         <div className="mt-6 flex items-center gap-4">
-          <a href="#" aria-label="Instagram" data-testid="footer-instagram-link" className="flex h-9 w-9 items-center justify-center rounded-full border border-ivory/25 text-ivory/70 transition-colors duration-300 hover:border-gold hover:text-gold">
+          <a href="https://instagram.com/aashnee_jewels" target="_blank" rel="noopener noreferrer" aria-label="Instagram" data-testid="footer-instagram-link" className="flex h-9 w-9 items-center justify-center rounded-full border border-ivory/25 text-ivory/70 transition-colors duration-300 hover:border-gold hover:text-gold">
             <Instagram className="h-4 w-4" strokeWidth={1.5} />
           </a>
-          <a href="#" aria-label="Facebook" data-testid="footer-facebook-link" className="flex h-9 w-9 items-center justify-center rounded-full border border-ivory/25 text-ivory/70 transition-colors duration-300 hover:border-gold hover:text-gold">
+          {/* <a href="#" aria-label="Facebook" data-testid="footer-facebook-link" className="flex h-9 w-9 items-center justify-center rounded-full border border-ivory/25 text-ivory/70 transition-colors duration-300 hover:border-gold hover:text-gold">
             <Facebook className="h-4 w-4" strokeWidth={1.5} />
-          </a>
+          </a> */}
         </div>
       </div>
 
